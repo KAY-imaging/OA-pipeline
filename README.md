@@ -1,4 +1,6 @@
-<div style="margin-left: 200px;">
+<div style="margin-left: 30px;">
+Этот текст будет смещен вправо на 30 пикселов.
+</div>
   
 # OA-workflow
 The provided Python script is a pipeline for processing and analyzing images of vascularization  
@@ -112,4 +114,4 @@ Xmltodict 	  (>= 0.13.0)
 #!pip install XlsxWriter==3.1.3
 #!pip install Xmltodict==0.13.0
 ```
-</div>
+
