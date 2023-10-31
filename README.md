@@ -1,7 +1,7 @@
 # OA-workflow
 The provided Python script is a pipeline for processing and analyzing images of  vascularization using the Amira / Avizo software.  
  It  applies a series of filters and processing techniques to enhance medical image data and extract meaningful information. It utilizes features provided by the Amira / Avizo software to perform these operations and save the results for further analysis.
-
+рпагпрущпук
 ---
 For each file, it applies a Hessian filter to enhance the image structure.  
 We apply this filter to enhance the tubular and elongated structures of the blood vessels. A Hessian matrix is calculated from each voxel of the input image, which reflects the changes of the intensity in different directions around a specific point. 
