@@ -1,6 +1,6 @@
-<div style="margin-left: 30px;">
-Этот текст будет смещен вправо на 30 пикселов.
-</div>
+ <pre>
+ Этот текст будет внутри блока кода и ограничен в ширине.
+ </pre>
   
 # OA-workflow
 The provided Python script is a pipeline for processing and analyzing images of vascularization  
