@@ -58,10 +58,12 @@ During this step we can select the files of interest by specifying the 'tag', wh
 
 3. Image preparation
 
+1.   Provide the path and tag of files to the Avizo console
+2.   Run the cell and paste the following text output into Avizo console
 
 
 
-
+After the images are sorted into a separate folder according to the tag, we can move to the Image preparation  which includes providing the path and tag of files to the Avizo console and ROI selection.
 
 
 
@@ -71,33 +73,25 @@ During this step we can select the files of interest by specifying the 'tag', wh
 
 Package                  Version
 ---------------------------------
-et-xmlfile 	(>= 1.1.0)
-matplotlib 	(>= 3.6.2)
-numpy 		(>=1.23.4)
-openpyxl 	(>= 3.1.2)
-pandas  	(>= 1.5.2)
-scipy 		(>= 1.10.0)
-seaborn	(>= 0.12.1)
-Statannot 	(>= 0.2.3)
-XlsxWriter 	(>= 3.1.3)
-Xmltodict 	(>= 0.13.0)
-
-!pip install et-xmlfile==1.1.0
-!pip install matplotlib==3.6.2
-!pip install numpy==1.23.4
-!pip install openpyxl==3.1.2
-!pip install pandas==1.5.2
-!pip install scipy==1.10.0
-!pip install seaborn==0.12.1
-!pip install Statannot==0.2.3
-!pip install XlsxWriter==3.1.3
-!pip install Xmltodict==0.13.0
-
-
-
-1.   Provide the path and tag of files to the Avizo console
-2.   Run the cell and paste the following text output into Avizo console
-
-
-
-After the images are sorted into a separate folder according to the tag, we can move to the Image preparation  which includes providing the path and tag of files to the Avizo console and ROI selection.
+et-xmlfile 	 (>= 1.1.0)  
+matplotlib 	 (>= 3.6.2)  
+numpy 		     (>=1.23.4)  
+openpyxl 	   (>= 3.1.2)  
+pandas  	    (>= 1.5.2)  
+scipy 		     (>= 1.10.0)  
+seaborn	     (>= 0.12.1)  
+Statannot 	  (>= 0.2.3)  
+XlsxWriter 	 (>= 3.1.3)  
+Xmltodict 	  (>= 0.13.0)  
+```
+#!pip install et-xmlfile==1.1.0
+#!pip install matplotlib==3.6.2
+#!pip install numpy==1.23.4
+#!pip install openpyxl==3.1.2
+#!pip install pandas==1.5.2
+#!pip install scipy==1.10.0
+#!pip install seaborn==0.12.1
+#!pip install Statannot==0.2.3
+#!pip install XlsxWriter==3.1.3
+#!pip install Xmltodict==0.13.0
+```
