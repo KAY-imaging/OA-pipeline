@@ -1,7 +1,7 @@
 # OA-workflow
 The provided Python script is a pipeline for processing and analyzing images of  vascularization using the Amira / Avizo software.  
  It  applies a series of filters and processing techniques to enhance medical image data and extract meaningful information. It utilizes features provided by the Amira / Avizo software to perform these operations and save the results for further analysis.
-рпагпрущпук
+
 ---
 For each file, it applies a Hessian filter to enhance the image structure.  
 We apply this filter to enhance the tubular and elongated structures of the blood vessels. A Hessian matrix is calculated from each voxel of the input image, which reflects the changes of the intensity in different directions around a specific point. 
@@ -57,6 +57,43 @@ Upon conversion the script returns the converted files to 'out_path' folder.
 During this step we can select the files of interest by specifying the 'tag', which should be a part of the file name. This function creates a new folder with the name specified by the tag parameter within the given folder path.
 
 3. Image preparation
+
+
+
+
+
+
+
+
+
+
+
+
+Package                  Version
+---------------------------------
+et-xmlfile 	(>= 1.1.0)
+matplotlib 	(>= 3.6.2)
+numpy 		(>=1.23.4)
+openpyxl 	(>= 3.1.2)
+pandas  	(>= 1.5.2)
+scipy 		(>= 1.10.0)
+seaborn	(>= 0.12.1)
+Statannot 	(>= 0.2.3)
+XlsxWriter 	(>= 3.1.3)
+Xmltodict 	(>= 0.13.0)
+
+!pip install et-xmlfile==1.1.0
+!pip install matplotlib==3.6.2
+!pip install numpy==1.23.4
+!pip install openpyxl==3.1.2
+!pip install pandas==1.5.2
+!pip install scipy==1.10.0
+!pip install seaborn==0.12.1
+!pip install Statannot==0.2.3
+!pip install XlsxWriter==3.1.3
+!pip install Xmltodict==0.13.0
+
+
 
 1.   Provide the path and tag of files to the Avizo console
 2.   Run the cell and paste the following text output into Avizo console
