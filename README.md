@@ -6,21 +6,9 @@ meaningful information. It utilizes features provided by the Amira / Avizo softw
 ---
 For each image it applies a **Hessian filter** to enhance the image structure.  
 
-We apply the Hessian filte to a 3D image, it is used to detect and highlight textural features and structures in volumetric data. In our case it is used to enhance the tubular and elongated structures of the blood vessels. It is based on the computation of the Hessian, which is a matrix of second partial derivatives of image intensity. In a 3D image, each point represents a volumetric voxel (similar to a pixel in 2D), and the Hessian filter can help identify volumetric textural features.
-
-
-We apply this filter . A Hessian matrix is calculated from each voxel of the input image, which reflects the changes of the intensity in different directions around a specific point. 
-Thus it is a filter that allows better structure visualization.
-
-
-
-
-
-
-
-
+We apply the Hessian filte to a 3D image, it is used to detect and highlight textural features and structures in volumetric data. In our case it is used to enhance the tubular and elongated structures of the blood vessels. It is based on the computation of the Hessian, which is a matrix of second partial derivatives of image intensity. In a 3D image, Hessian matrix is calculated from each point representing a volumetric voxel (similar to a pixel in 2D) of the input image. The Hessian filter can help identify volumetric textural features (such as rod-like vessels structure), reflecting the changes of the intensity in different directions around a specific point.
 [Dirk-Jan Kroon (2023). Hessian based Frangi Vesselness filter (https://www.mathworks.com/matlabcentral/fileexchange/24409-hessian-based-frangi-vesselness-filter) ].  
-
+To vary settings you need to specify ..... for the series of NIfTI images you would like to process.
 **MAX** and **MIN** are the maximum and minimum radius of the structure respectively (shown in voxels). **STD** (shown in voxels) represents the standart deviation of the measurement that we use to identify our object. It is preferable for the STD value to be > voxel size.  
 
 ---
