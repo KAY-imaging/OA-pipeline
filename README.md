@@ -1,7 +1,4 @@
- <pre>
- Этот текст будет внутри блока кода и ограничен в ширине.
- </pre>
-  
+
 # OA-workflow
 The provided Python script is a pipeline for processing and analyzing images of vascularization  
 using the Thermo Fisher Scientific Amira / Avizo 3D Visualization & Analysis Software (2022.2).  
