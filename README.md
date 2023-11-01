@@ -6,9 +6,9 @@ meaningful information. It utilizes features provided by the Amira / Avizo softw
 Here we want to describe how our pipeline could be implemented to characterize 3D images of vascularisation.
 ---
 ><font size='4'>Image preprocessing</font>
-1. Nifti dimentions converter  
-  1.1. Uploads file from 'folder_path'  
-  1.2. Returns converted files to 'out_path' folder
+>1. Nifti dimentions converter  
+>  1.1. Uploads file from 'folder_path'  
+>  1.2. Returns converted files to 'out_path' folder
 
 The 'matlab_script_converter_nifti', 'folder_path' and 'out_path' need to be defined  
 The script retrieves a list of files from a specified directory. 
