@@ -23,14 +23,16 @@ Upon conversion the script returns the converted files to 'out_path' folder.
 
 During this step we can select the files of interest by specifying the 'tag', which should be a part of the file name. This function creates a new folder with the name specified by the tag parameter within the given folder path.
 
-3. Image preparation
-
-1.   Provide the path and tag of files to the Avizo console
-2.   Run the cell and paste the following text output into Avizo console
-
-
-
+>3. Image preparation  
+  3.1. Provide the path and tag of files to the Avizo console  
+  3.2. Run the cell and paste the following text output into Avizo console 
+ 
 After the images are sorted into a separate folder according to the tag, we can move to the Image preparation  which includes providing the path and tag of files to the Avizo console and ROI selection.
+
+>4. ROI selection  
+  4.1. Paste the following code into Avizo console
+
+
 
 ---
 For each image it applies a **Hessian filter** to enhance the image structure.  
