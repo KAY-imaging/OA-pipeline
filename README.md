@@ -5,7 +5,7 @@ meaningful information. It utilizes features provided by the Amira / Avizo softw
 
 Here we want to describe how our pipeline could be implemented to characterize 3D images of vascularisation.
 ---
-><font size='4'>Image preprocessing</font>
+***Image preprocessing***
 >1. Nifti dimentions converter  
 >  1.1. Uploads file from 'folder_path'  
 >  1.2. Returns converted files to 'out_path' folder
@@ -51,7 +51,7 @@ The first part of this pipeline is then complete with clearing of the project vi
 
 ---
 
->Image processing  
+***Image processing*** 
 >8. Process the image and save the results  
 >    Warning: this step requires computer resources.  
 >    We do not recommend to upload stacks of large images.  
