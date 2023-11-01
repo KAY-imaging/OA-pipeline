@@ -64,6 +64,28 @@ The first part of this pipeline is then complete with clearing of the project vi
 >    See the settings below  
 
 
+extention = '.nii'              # File extention variable
+                                # Can be changed for other file types
+
+number_of_images_for_threshold = 0    # Set number of images in the series
+                                      # (if number_of_images_for_threshold = 0, the threshold will be calculated for each image)
+
+first_point_shift = 0.985    # The percentage by which the left autorange limit is moved
+                             # Calculated as (default_autorange - default_autorange * first_point_shift)
+
+second_point_shift = 0.9     # The percentage by which the right autorange limit is moved
+                             # Calculated as (default_autorange - default_autorange * second_point_shift)
+
+multiplier_for_frameshift_of_volren = 1  # Range frameshift for the Volume Rendering filter
+                                         # If the image is too bright, adjust the settings respectively
+
+threshold_multiplier = 2.5    # Threshold shift multiplier to avoid noise and mess
+                              # Removes ranges from ranges frame that a visualized by threshold_multiplier
+                              # Calculated as:
+                              # ((first_point_shift/second_point_shift * ranges from autothreshold) * multiplier_for_frameshift_of_volren)) * threshold_multiplier
+
+To avoid the common error of Avizo auto-threshold setting, we preform the shift of the frame to the histogram values that will allow for proper visualization.
+
 ---
 
 For each image it applies a **Hessian filter** to enhance the image structure.  
