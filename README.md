@@ -32,6 +32,16 @@ After the images are sorted into a separate folder according to the tag, we can 
 >4. ROI selection  
   4.1. Paste the following code into Avizo console
 
+This step uploads the sorted images from the folder created in the previous step and performs Volume Rendering.
+
+>5. Manual selection of ROI  
+  5.1. Select ROI of your choice  
+  5.2. Create mask using the 'Volume Edit' tool in Avizo
+
+You can manually select the desired ROI, which will be cut from the image, and create a mask with the 'Volume Edit' tool. This mask will be saved in a separate folder in the next step:
+
+>6. Saving  
+  6.1. Paste the following code into Avizo console
 
 
 ---
