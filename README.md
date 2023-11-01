@@ -89,14 +89,14 @@ Package                  Version
 ---------------------------------
 et-xmlfile 	 (>= 1.1.0)  
 matplotlib 	 (>= 3.6.2)  
-numpy 		     (>=1.23.4)  
+numpy 		   (>=1.23.4)  
 openpyxl 	   (>= 3.1.2)  
-pandas  	    (>= 1.5.2)  
-scipy 		     (>= 1.10.0)  
+pandas  	   (>= 1.5.2)  
+scipy 		   (>= 1.10.0)  
 seaborn	     (>= 0.12.1)  
-Statannot 	  (>= 0.2.3)  
+Statannot 	 (>= 0.2.3)  
 XlsxWriter 	 (>= 3.1.3)  
-Xmltodict 	  (>= 0.13.0)  
+Xmltodict 	 (>= 0.13.0)  
 ```
 #!pip install et-xmlfile==1.1.0
 #!pip install matplotlib==3.6.2
