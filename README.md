@@ -64,6 +64,8 @@ The first part of this pipeline is then complete with clearing of the project vi
 >    See the settings below  
 
 
+---
+
 For each image it applies a **Hessian filter** to enhance the image structure.  
 
 We apply the Hessian filte to a 3D image, it is used to detect and highlight textural features and structures in volumetric data. In our case it is used to enhance the tubular and elongated structures of the blood vessels. It is based on the computation of the Hessian, which is a matrix of second partial derivatives of image intensity. In a 3D image, Hessian matrix is calculated from each point representing a volumetric voxel (similar to a pixel in 2D) of the input image. The Hessian filter can help identify volumetric textural features (such as rod-like vessels structure), reflecting the changes of the intensity in different directions around a specific point.
