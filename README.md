@@ -43,12 +43,27 @@ You can manually select the desired ROI, which will be cut from the image, and c
 >6. Saving  
   6.1. Paste the following code into Avizo console
 
->7. Clear 'Project view' in Avizo
-  6.1. Clear and restart the Python console
-  6.2. Copy the new_path and tag into the Avizo console again (see beginning of Step 2)
+The first part of this pipeline is then complete with clearing of the project view window in Avizo and prepare it for the next step:
 
+>7. Clear 'Project view' in Avizo  
+  7.1. Clear and restart the Python console  
+  7.2. Copy the new_path and tag into the Avizo console again (see beginning of Step 2)
 
 ---
+
+>Image processing  
+>8. Process the image and save the results  
+>    Warning: this step requires computer resources.  
+>    We do not recommend to upload stacks of large images.  
+
+>  8.1. For images with other extentions:  
+>  8.2. Change the 'extention' variable  
+>  8.3. Paste the following code into Avizo console  
+
+>    Filter settings can be adjusted with respect to your image properties  
+>    See the settings below  
+
+
 For each image it applies a **Hessian filter** to enhance the image structure.  
 
 We apply the Hessian filte to a 3D image, it is used to detect and highlight textural features and structures in volumetric data. In our case it is used to enhance the tubular and elongated structures of the blood vessels. It is based on the computation of the Hessian, which is a matrix of second partial derivatives of image intensity. In a 3D image, Hessian matrix is calculated from each point representing a volumetric voxel (similar to a pixel in 2D) of the input image. The Hessian filter can help identify volumetric textural features (such as rod-like vessels structure), reflecting the changes of the intensity in different directions around a specific point.
