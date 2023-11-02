@@ -73,16 +73,26 @@ It allows you either to define different thresholds for every single image or de
 and then apply it to all the other images in the series.   
 If number_of_images_for_threshold = 0, the threshold will be calculated for each image
 
-Calculations:
+### Calculation 1:
 
-1. First Expression:
-   $$\text{Calculated as } (\text{default\_autorange} - \text{default\_autorange} \times \text{first\_point\_shift})$$
+```math
+Result_1 = default_autorange - default_autorange \times first_point_shift  
+```
 
-2. Second Expression:
-   $$\text{Calculated as } (\text{default\_autorange} - \text{default\_autorange} \times \text{second\_point\_shift})$$
+```math
+Result_2 = default_autorange - default_autorange \times second_point_shift  
+```
 
-3. Third Expression:
-   $$\text{Calculated as } \left(\frac{\text{first\_point\_shift}}{\text{second\_point\_shift}} \times \text{ranges from autothreshold} \times \text{multiplier\_for\_frameshift\_of\_volren}\right) \times \text{threshold\_multiplier}$$
+```math
+Result_3 = \left(\frac{first_point_shift}{second_point_shift} \times \text{ranges from autothreshold}\right) \times multiplier_for_frameshift_of_volren \times threshold_multiplier  
+```
+
+
+2. **Second Expression:**
+   Calculated as: default_autorange - default_autorange * second_point_shift
+
+3. **Third Expression:**
+   Calculated as: ((first_point_shift / second_point_shift * ranges from autothreshold) * multiplier_for_frameshift_of_volren) * threshold_multiplier
 
 
 **'first_point_shift'** defines the percentage by which the left autorange limit is moved  
