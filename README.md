@@ -68,6 +68,11 @@ The first part of this pipeline is then complete with clearing of the project vi
 extention = '.modif'            # File extention variable
                                 # Can be set for various file types: .nii, .modif, .tiff, etc.
 
+
+---
+
+                                
+
 number_of_images_for_threshold = 0    # Set number of images in the series
                                       # (if number_of_images_for_threshold = 0, the threshold will be calculated for each image)
 
