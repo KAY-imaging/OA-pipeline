@@ -166,7 +166,6 @@ some of the small segments will be ignored to escape the penalty increase.
 In this step we have to select an appropriate threshold according to the smallest value of **'Curvedlength'** in the output .xml.  
 This step is to avoid noise like two- or three-voxel meaningless branches.
 
-
 >10. Creation of datasets with a defined order
 >    
 >    10.1. Define the dataset order for merging  
@@ -175,6 +174,9 @@ This step is to avoid noise like two- or three-voxel meaningless branches.
 >    10.3. One of the outputs is a merged DataFrame that contains a column named 'conditions' with the filenames of all the images that were analyzed  
 >    10.4. The other one is 'mean' dataset according to the 'merging order' and mode  
 >    10.5. This dataset we save in .xlsx format, that are easy to analyse  
+
+Опишем все фичи и датасеты тут
+
 
 >    Output dataframes:
 ```math
@@ -227,6 +229,7 @@ dataset['Weighted\_Segment\_Volume\_perSegment [um^3]'] = \frac{Volume_i \cdot C
 
 Statistics are collected using **Spatial Graph Statistics** on the **Centrline tree** calculations results.
 
+Статистические критерии на ваш выбор и пропишем что менять 
 ---
 The project is autosaved in **Amira/Avizo** format.
 
