@@ -230,6 +230,8 @@ dataset['Weighted\_Segment\_Volume\_perSegment [um^3]'] = \frac{Volume_i \cdot C
 Statistics are collected using **Spatial Graph Statistics** on the **Centrline tree** calculations results.
 
 Статистические критерии на ваш выбор и пропишем что менять 
+Далее мы строим бокс плоты, вайолин плоты, вы мможете собиратьстатистику для ваших данных в полуавтоматическом режиме, используя Статистические критерии на ваш выбор
+
 ---
 The project is autosaved in **Amira/Avizo** format.
 
