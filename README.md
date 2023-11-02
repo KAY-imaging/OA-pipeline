@@ -183,18 +183,26 @@ dataset['Geometrical\_Volume\_perImage [um^3]'] = \frac{\sum_{i} (MeanRadius_i)^
 dataset['Imaging\_Error\_perImage'] = 1 - \frac{Geometrical\_Volume\_perImage [um^3]}{Volume\_Sum\_perImage [um^3]}
 ```
 ```math
-dataset['Volume\_Sum\_perImage [um^3]'] = \frac{volume\_sum}{10^9} 
-```
-```math
-dataset['Volume\_Sum\_perImage [um^3]'] = \frac{volume\_sum}{10^9} 
-```
-```math
-dataset['Volume\_Sum\_perImage [um^3]'] = \frac{volume\_sum}{10^9} 
-```
-```math
-dataset['Volume\_Sum\_perImage [um^3]'] = \frac{volume\_sum}{10^9} 
-```
+curvedlength\_sum = \sum_{i} CurvedLength_i
+dataset['Vessels\_CurvedLength\_Sum\_perImage [um]'] = \frac{curvedlength\_sum}{1000}
 
+```
+```math
+dataset['Weighted\_MeanRadius\_perImage [um]'] = \frac{\sum_{i} MeanRadius_i \cdot CurvedLength_i}{curvedlength\_sum \cdot 1000}
+```
+```math
+dataset['Weighted\_MeanTortuosity\_perImage'] = \frac{\sum_{i} Tortuosity_i \cdot CurvedLength_i}{curvedlength\_sum}
+```
+```math
+dataset['Weighted\_Segment\_MeanRadius\_perSegment [um]'] = \frac{MeanRadius_i \cdot CurvedLength_i}{curvedlength\_sum \cdot 1000} 
+```
+```math
+dataset['Weighted\_Segment\_Tortuosity\_perSegment'] = \frac{Tortuosity_i \cdot CurvedLength_i}{curvedlength\_sum}
+```
+```math
+dataset['Weighted\_Segment\_Volume\_perSegment [um^3]'] = \frac{Volume_i \cdot CurvedLength_i}{curvedlength\_sum}
+
+```
 
 >    frame_for_export
 
