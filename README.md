@@ -71,6 +71,7 @@ The filters we provide for our pipeline can be modified with the following setti
 **'number_of_images_for_threshold'** is a function that sets a number of images in the series.  
 It allows you either to define different thresholds for every single image or define the threshold for one image  
 and then apply it to all the other images in the series.   
+
 If number_of_images_for_threshold = 0, the threshold will be calculated for each image
 
 ### Calculation 1:
@@ -96,7 +97,8 @@ Calculated as (default_autorange - default_autorange * first_point_shift)
 **'second_point_shift'** defines the percentage by which the right autorange limit is moved
                              # Calculated as (default_autorange - default_autorange * second_point_shift)
 
-**'multiplier_for_frameshift_of_volren'** it is a multiplier that performs the range frameshift for the 'Volume Rendering' filter, if the image is too bright, the settings can be adjusted respectively
+**'multiplier_for_frameshift_of_volren'** it is a multiplier that performs the range frameshift for the 'Volume Rendering' filter  
+If the image is too bright, the settings can be adjusted respectively
 
 **'threshold_multiplier'**  Threshold shift multiplier allows to avoid noise and mess. It removes ranges from ranges frame that are visualized by **'threshold_multiplier'**
                               # Calculated as:
@@ -139,15 +141,13 @@ To perform the pruning, the algorithm visits each end branch of the skeleton and
 
 A certain number of pruning iterations **'pruning.ports.numberOfIterations.texts[0].value'** can be set.
 
-
 **Centerline tree reconstruction.** This tool is used for extracting and visualizing the central axes of the blood vessels. 
 
-  centrline_tree.ports.tubesParams.texts[0].value = 2        # Centrline tree Slope
-    centrline_tree.ports.tubesParams.texts[1].value = 4        # Centrline tree ZeroVal
 **'centrline_tree.ports.tubesParams.texts[0].value'** Centrline tree Slope is a penalty parameter that is responsible for creating a loop-like branch. 
-**'centrline_tree.ports.tubesParams.texts[1].value'** Centrline tree ZeroVal is a penalty that is responsible for creating a straight branch.  
+**'centrline_tree.ports.tubesParams.texts[1].value'** Centrline tree ZeroVal is a penalty that is responsible for creating a straight branch.   
 However, if you reduce the ZeroVal, it will not result in merging of small fragments into a bigger one but, on the contrary,  
-some of the small segments will be ignored to escape the penalty increase.
+some of the small segments will be ignored to escape the penalty increase.  
+
 Слоуп это параметр пеналти который отвечает за образование бранча в виде петли (чтобы закольцевать бранч)
 Зеро валью это значение пеналти отвечающее за создание нового прямого бранча, при этом если уменьшить зеро валью то сегменты не сливаются в один большой, а он просто игнорирует некоторую часть сегментов для избегания пеналти
 
