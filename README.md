@@ -89,31 +89,20 @@ Result = \left(\left(first\_point\_shift \, \text{or} \, second\_point\_shift\ri
 ```
 
 
-
-
 **'first_point_shift'** defines the percentage by which the left autorange limit is moved  
 Calculated as (default_autorange - default_autorange * first_point_shift)
 
 **'second_point_shift'** defines the percentage by which the right autorange limit is moved
                              # Calculated as (default_autorange - default_autorange * second_point_shift)
 
-**'multiplier_for_frameshift_of_volren'** = 1  # Range frameshift for the Volume Rendering filter
-                                         # If the image is too bright, adjust the settings respectively
+**'multiplier_for_frameshift_of_volren'** it is a multiplier that performs the range frameshift for the 'Volume Rendering' filter, if the image is too bright, the settings can be adjusted respectively
 
-threshold_multiplier = 2.5    # Threshold shift multiplier to avoid noise and mess
-                              # Removes ranges from ranges frame that a visualized by threshold_multiplier
+**'threshold_multiplier'**  Threshold shift multiplier allows to avoid noise and mess. It removes ranges from ranges frame that are visualized by **'threshold_multiplier'**
                               # Calculated as:
                               # ((first_point_shift/second_point_shift * ranges from autothreshold) * multiplier_for_frameshift_of_volren)) * threshold_multiplier
 
 
-            # Hessian filter
-        hessian_filter = hx_object_factory.create('structureenhancementfilter')
-        hx_project.add(hessian_filter)
-        hessian_filter.ports.inputImage.connect(hx_project.get(file))
-        hessian_filter.ports.interpretation.selected = 1                       # Hessian filter: 3D interpretation mode settings
-        hessian_filter.ports.standardDeviationMinMax.texts[0].value = 1     # Hessian filter: standard deviation MIN
-        hessian_filter.ports.standardDeviationMinMax.texts[1].value = 4      # Hessian filter: standard deviation MAX
-        hessian_filter.ports.standardDeviationStep.texts[0].value = 2       # Hessian filter: standard deviation STEP
+
 
           
 
@@ -146,13 +135,19 @@ To avoid the common error of Avizo auto-threshold setting, we preform the shift 
 
 ---
 
-For each image it applies a **Hessian filter** to enhance the image structure.  
+
+For each image we apply a **Hessian filter** to enhance the image structure.  
 
 We apply the Hessian filte to a 3D image, it is used to detect and highlight textural features and structures in volumetric data. In our case it is used to enhance the tubular and elongated structures of the blood vessels. It is based on the computation of the Hessian, which is a matrix of second partial derivatives of image intensity. In a 3D image, Hessian matrix is calculated from each point representing a volumetric voxel (similar to a pixel in 2D) of the input image. The Hessian filter can help identify volumetric textural features (such as rod-like vessels structure), reflecting the changes of the intensity in different directions around a specific point.
 [Dirk-Jan Kroon (2023). Hessian based Frangi Vesselness filter (https://www.mathworks.com/matlabcentral/fileexchange/24409-hessian-based-frangi-vesselness-filter) ]. 
 
 To vary Hessian filter settings you need to specify **'hessian_filter'** parameters according to comments in the python notebook for the series of NIfTI images you would like to process.
 **MAX** and **MIN** are the maximum and minimum radius of the structure respectively (shown in voxels). **STD** (shown in voxels) represents the standart deviation of the measurement that we use to identify our object. It is preferable for the STD value to be > voxel size.  
+
+hessian_filter.ports.interpretation.selected = 1                       # Hessian filter: 3D interpretation mode settings
+hessian_filter.ports.standardDeviationMinMax.texts[0].value = 1     # Hessian filter: standard deviation MIN
+hessian_filter.ports.standardDeviationMinMax.texts[1].value = 4      # Hessian filter: standard deviation MAX
+hessian_filter.ports.standardDeviationStep.texts[0].value = 2       # Hessian filter: standard deviation STEP
 
 ---
 Next, we apply the **unsharp mask filter** to further enhance image details.
