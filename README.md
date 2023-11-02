@@ -173,6 +173,28 @@ Unwanted structures or objects that fall below the specified criteria are elimin
 >    10.5. This dataset we save in .xlsx format, that are easy to analyse  
 
 >    Output dataframes:
+```math
+dataset['Volume\_Sum\_perImage [um^3]'] = \frac{volume\_sum}{10^9} 
+```
+```math
+dataset['Geometrical\_Volume\_perImage [um^3]'] = \frac{\sum_{i} (MeanRadius_i)^2 \pi CurvedLength_i}{10^9} 
+```
+```math
+dataset['Imaging\_Error\_perImage'] = 1 - \frac{Geometrical\_Volume\_perImage [um^3]}{Volume\_Sum\_perImage [um^3]}
+```
+```math
+dataset['Volume\_Sum\_perImage [um^3]'] = \frac{volume\_sum}{10^9} 
+```
+```math
+dataset['Volume\_Sum\_perImage [um^3]'] = \frac{volume\_sum}{10^9} 
+```
+```math
+dataset['Volume\_Sum\_perImage [um^3]'] = \frac{volume\_sum}{10^9} 
+```
+```math
+dataset['Volume\_Sum\_perImage [um^3]'] = \frac{volume\_sum}{10^9} 
+```
+
 
 >    frame_for_export
 
