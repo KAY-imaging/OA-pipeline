@@ -52,37 +52,34 @@ The first part of this pipeline is then complete with clearing of the project vi
 ---
 
 ***Image processing*** 
->8. Process the image and save the results  
->    Warning: this step requires computer resources.  
->    We do not recommend to upload stacks of large images.  
+>8. Process the image and save the results
+>   
+>    Warning: this step requires computer resources.    
+>    We do not recommend to upload stacks of large images.
+>   
+>    8.1. For images with other extentions:   
+>    8.2. Change the 'extention' variable   
+>    8.3. Paste the following code into Avizo console
 
->  8.1. For images with other extentions:  
->  8.2. Change the 'extention' variable  
->  8.3. Paste the following code into Avizo console  
+By default the extension is set to .nii but it can be changed to your desired file type, such as .modif, .tiff, etc.
 
->    Filter settings can be adjusted with respect to your image properties  
->    See the settings below  
+>    Filter settings can be adjusted with respect to your image properties    
+>    See the settings below    
 
+The filters we provide for our pipeline can be modified with the following settings:             
 
+**'number_of_images_for_threshold'** is a function that sets a number of images in the series.  
+It allows you either to define different thresholds for every single image or define the threshold for one image  
+and then apply it to all the other images in the series.   
+If number_of_images_for_threshold = 0, the threshold will be calculated for each image
 
-extention = '.modif'            # File extention variable
-                                # Can be set for various file types: .nii, .modif, .tiff, etc.
+**'first_point_shift'** defines the percentage by which the left autorange limit is moved  
+Calculated as (default_autorange - default_autorange * first_point_shift)
 
-
----
-
-                                
-
-number_of_images_for_threshold = 0    # Set number of images in the series
-                                      # (if number_of_images_for_threshold = 0, the threshold will be calculated for each image)
-
-first_point_shift = 0.985    # The percentage by which the left autorange limit is moved
-                             # Calculated as (default_autorange - default_autorange * first_point_shift)
-
-second_point_shift = 0.9     # The percentage by which the right autorange limit is moved
+**'second_point_shift'** defines the percentage by which the right autorange limit is moved
                              # Calculated as (default_autorange - default_autorange * second_point_shift)
 
-multiplier_for_frameshift_of_volren = 1  # Range frameshift for the Volume Rendering filter
+**'multiplier_for_frameshift_of_volren'** = 1  # Range frameshift for the Volume Rendering filter
                                          # If the image is too bright, adjust the settings respectively
 
 threshold_multiplier = 2.5    # Threshold shift multiplier to avoid noise and mess
@@ -165,7 +162,48 @@ Unwanted structures or objects that fall below the specified criteria are elimin
 
 **Centerline tree reconstruction.** This tool is used for extracting and visualizing the central axes of the blood vessels. 
 
+>    8.4. Press 'Autosave' in Avizo to save project     
+>    8.5. Save .XML files to the folder with images     
+
 ---
+
+>9. Script for reading and filtering (denoising) the .XML output from Avizo
+>    
+>    9.1. Set 'file_path' to a folder of your choice with .XML data  
+>    9.2. Define the 'pattern' variable to get an appropriate title for 'Condition' labeling    
+>    9.3. Define the 'selector' and select the column name to apply a threshold to remove the noise from the data.  
+>    9.4. Define 'threshold' variable for better results
+
+
+
+>10. Creation of datasets with a defined order
+>    
+>    10.1. Define the dataset order for merging  
+>    (e.g. if there are 4 datasets that need to be splitted into two groups (based on filename), specify 2, 2 in merging_order    
+>    10.2. Merging allows to create dataframes that are specifically suited for your sampling conditions  
+>    10.3. One of the outputs is a merged DataFrame that contains a column named 'conditions' with the filenames of all the images that were analyzed  
+>    10.4. The other one is 'mean' dataset according to the 'merging order' and mode  
+>    10.5. This dataset we save in .xlsx format, that are easy to analyse  
+
+>    Output dataframes:
+
+>    frame_for_export
+
+>    Consists of 'mean' by dataframe observation.
+>    Each observation defined by sample group was provided in merging.
+
+>    one_big_merged_frame
+
+>    Consists of all dataframes with column 'Condition', where the sample names are presented
+
+
+>11. Boxplots for all samples with respective stats and annotations
+>    Here we work with 'one_big_merged_frame' dataset
+
+>    Makes plots according to 'Condition' column and our groups
+
+
+
 Statistics are collected using **Spatial Graph Statistics** on the **Centrline tree** calculations results.
 
 ---
