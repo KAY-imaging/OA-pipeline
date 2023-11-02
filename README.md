@@ -64,8 +64,9 @@ The first part of this pipeline is then complete with clearing of the project vi
 >    See the settings below  
 
 
-extention = '.nii'              # File extention variable
-                                # Can be changed for other file types
+
+extention = '.modif'            # File extention variable
+                                # Can be set for various file types: .nii, .modif, .tiff, etc.
 
 number_of_images_for_threshold = 0    # Set number of images in the series
                                       # (if number_of_images_for_threshold = 0, the threshold will be calculated for each image)
@@ -83,6 +84,43 @@ threshold_multiplier = 2.5    # Threshold shift multiplier to avoid noise and me
                               # Removes ranges from ranges frame that a visualized by threshold_multiplier
                               # Calculated as:
                               # ((first_point_shift/second_point_shift * ranges from autothreshold) * multiplier_for_frameshift_of_volren)) * threshold_multiplier
+
+
+            # Hessian filter
+        hessian_filter = hx_object_factory.create('structureenhancementfilter')
+        hx_project.add(hessian_filter)
+        hessian_filter.ports.inputImage.connect(hx_project.get(file))
+        hessian_filter.ports.interpretation.selected = 1                       # Hessian filter: 3D interpretation mode settings
+        hessian_filter.ports.standardDeviationMinMax.texts[0].value = 1     # Hessian filter: standard deviation MIN
+        hessian_filter.ports.standardDeviationMinMax.texts[1].value = 4      # Hessian filter: standard deviation MAX
+        hessian_filter.ports.standardDeviationStep.texts[0].value = 2       # Hessian filter: standard deviation STEP
+
+          
+
+            # Unsharp mask: filter
+        unsharpMask = hx_object_factory.create('unsharpmaskfilter')
+        hx_project.add(unsharpMask)
+        unsharpMask.ports.interpretation.selected = 0         # Unsharp mask: interpolation type
+        unsharpMask.ports.edgeSize.texts[0].value = 5         # Unsharp mask: edge size settings
+        unsharpMask.ports.edgeContrast.texts[0].value = 0.99  # Unsharp mask: edge contrast settings
+
+
+
+    volumeRender.ports.alphaScale.value = 0.4              # Transparency settings
+    volumeRenderingSettings.ports.rendering.selected = 0   # Standard type rendering settings
+    volumeRenderingSettings.fire()
+    _+=1
+
+
+    pruning.ports.numberOfIterations.texts[0].value = 10        # Pruning: number of iterations
+
+    centrline_tree.ports.tubesParams.texts[0].value = 2        # Centrline tree Slope
+    centrline_tree.ports.tubesParams.texts[1].value = 4        # Centrline tree ZeroVal
+Слоуп это параметр пеналти который отвечает за образование бранча в виде петли (чтобы закольцевать бранч)
+Зеро валью это значение пеналти отвечающее за создание нового прямого бранча, при этом если уменьшить зеро валью то сегменты не сливаются в один большой, а он просто игнорирует некоторую часть сегментов для избегания пеналти
+
+
+
 
 To avoid the common error of Avizo auto-threshold setting, we preform the shift of the frame to the histogram values that will allow for proper visualization.
 
