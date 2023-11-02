@@ -84,7 +84,7 @@ Result_2 = default\_autorange - default\_autorange \times second\_point\_shift
 ```
 
 ```math
-Result = \left(\left(first\_point\_shift \, \text{or} \, second\_point\_shift\right) \times \text{ranges\_from\_autothreshold} \times \text{multiplier\_for\_frameshift\_of\_volren}\right) \times \text{threshold\_multiplier}
+Result = \left(\left(first\_point\_shift \, \text{or} \, second\_point\_shift\right) \times {ranges\_from\_autothreshold} \times {multiplier\_for\_frameshift\_of\_volren}\right) \times {threshold\_multiplier}
 
 ```
 
