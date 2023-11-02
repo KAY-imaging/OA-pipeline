@@ -76,15 +76,16 @@ If number_of_images_for_threshold = 0, the threshold will be calculated for each
 ### Calculation 1:
 
 ```math
-Result_1 = default_autorange - default_autorange \times first_point_shift  
+Result_1 = default\_autorange - default\_autorange \times first\_point\_shift  
 ```
 
 ```math
-Result_2 = default_autorange - default_autorange \times second_point_shift  
+Result_2 = default\_autorange - default\_autorange \times second\_point\_shift  
 ```
 
 ```math
-Result_3 = \left(\frac{first_point_shift}{second_point_shift} \times \text{ranges from autothreshold}\right) \times multiplier_for_frameshift_of_volren \times threshold_multiplier  
+Result = \left(\left(first\_point\_shift \, \text{or} \, second\_point\_shift\right) \times \text{ranges\_from\_autothreshold} \times \text{multiplier\_for\_frameshift\_of\_volren}\right) \times \text{threshold\_multiplier}
+
 ```
 
 
