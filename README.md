@@ -29,7 +29,7 @@ During this step we can select the files of interest by specifying the 'tag', wh
  
 After the images are sorted into a separate folder according to the tag, we can move to the Image preparation  which includes providing the path and tag of files to the Avizo console and ROI selection.
 
->4. ROI selection  
+>4. ROI preselection  
   4.1. Paste the following code into Avizo console
 
 This step uploads the sorted images from the folder created in the previous step and performs Volume Rendering.
