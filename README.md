@@ -102,25 +102,6 @@ Calculated as (default_autorange - default_autorange * first_point_shift)
                               # ((first_point_shift/second_point_shift * ranges from autothreshold) * multiplier_for_frameshift_of_volren)) * threshold_multiplier
 
 
-
-
-          
-
-            # Unsharp mask: filter
-        unsharpMask = hx_object_factory.create('unsharpmaskfilter')
-        hx_project.add(unsharpMask)
-        unsharpMask.ports.interpretation.selected = 0         # Unsharp mask: interpolation type
-        unsharpMask.ports.edgeSize.texts[0].value = 5         # Unsharp mask: edge size settings
-        unsharpMask.ports.edgeContrast.texts[0].value = 0.99  # Unsharp mask: edge contrast settings
-
-
-
-    volumeRender.ports.alphaScale.value = 0.4              # Transparency settings
-    volumeRenderingSettings.ports.rendering.selected = 0   # Standard type rendering settings
-    volumeRenderingSettings.fire()
-    _+=1
-
-
     pruning.ports.numberOfIterations.texts[0].value = 10        # Pruning: number of iterations
 
     centrline_tree.ports.tubesParams.texts[0].value = 2        # Centrline tree Slope
@@ -144,11 +125,6 @@ We apply the Hessian filte to a 3D image, it is used to detect and highlight tex
 To vary Hessian filter settings you need to specify **'hessian_filter'** parameters according to comments in the python notebook for the series of NIfTI images you would like to process.
 **MAX** and **MIN** are the maximum and minimum radius of the structure respectively (shown in voxels). **STD** (shown in voxels) represents the standart deviation of the measurement that we use to identify our object. It is preferable for the STD value to be > voxel size.  
 
-hessian_filter.ports.interpretation.selected = 1                       # Hessian filter: 3D interpretation mode settings
-hessian_filter.ports.standardDeviationMinMax.texts[0].value = 1     # Hessian filter: standard deviation MIN
-hessian_filter.ports.standardDeviationMinMax.texts[1].value = 4      # Hessian filter: standard deviation MAX
-hessian_filter.ports.standardDeviationStep.texts[0].value = 2       # Hessian filter: standard deviation STEP
-
 ---
 Next, we apply the **unsharp mask filter** to further enhance image details.
 This filter is applied to reduce the impact of noise and to preserve the fine structures that can be easily lost in subsequent stages of image processing. It works by applying a smoothing filter to the original image to create its blurred version. After that, the original image is subtracted from the blurred image to enhance the contrast and sharpness of the blood vessel edges. The edge size and the edge contrast must be adjusted in accordance with the image analyzed.
@@ -157,10 +133,8 @@ The filtered files are renamed to indicate the applied filters.
 
 ---
 **Volume rendering** is further performed on the filtered files.
-
 Ranges for intensity rendering are collected to determine appropriate rendering ranges for each file.
-
-The volume rendering parameters are adjusted based on the autoranges.  
+The volume rendering parameters are adjusted based on the autoranges and then recalculated for appropriate image display.
 
 ---
 **Interactive thresholding** is applied to the filtered files using the adjusted ranges for threshold rendering thus separating desired structures from the background.  
