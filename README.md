@@ -73,6 +73,18 @@ It allows you either to define different thresholds for every single image or de
 and then apply it to all the other images in the series.   
 If number_of_images_for_threshold = 0, the threshold will be calculated for each image
 
+Calculations:
+
+1. First Expression:
+   $$\text{Calculated as } (\text{default\_autorange} - \text{default\_autorange} \times \text{first\_point\_shift})$$
+
+2. Second Expression:
+   $$\text{Calculated as } (\text{default\_autorange} - \text{default\_autorange} \times \text{second\_point\_shift})$$
+
+3. Third Expression:
+   $$\text{Calculated as } \left(\frac{\text{first\_point\_shift}}{\text{second\_point\_shift}} \times \text{ranges from autothreshold} \times \text{multiplier\_for\_frameshift\_of\_volren}\right) \times \text{threshold\_multiplier}$$
+
+
 **'first_point_shift'** defines the percentage by which the left autorange limit is moved  
 Calculated as (default_autorange - default_autorange * first_point_shift)
 
