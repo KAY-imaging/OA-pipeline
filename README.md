@@ -89,11 +89,6 @@ Result = \left(\left(first\_point\_shift \, \text{or} \, second\_point\_shift\ri
 ```
 
 
-2. **Second Expression:**
-   Calculated as: default_autorange - default_autorange * second_point_shift
-
-3. **Third Expression:**
-   Calculated as: ((first_point_shift / second_point_shift * ranges from autothreshold) * multiplier_for_frameshift_of_volren) * threshold_multiplier
 
 
 **'first_point_shift'** defines the percentage by which the left autorange limit is moved  
