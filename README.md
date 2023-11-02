@@ -116,7 +116,7 @@ To vary Hessian filter settings you need to specify **'hessian_filter'** paramet
 **MAX** and **MIN** are the maximum and minimum radius of the structure respectively (shown in voxels). **STD** (shown in voxels) represents the standart deviation of the measurement that we use to identify our object. It is preferable for the STD value to be > voxel size.  
 
 ---
-Next, we apply the **unsharp mask filter** to further enhance image details.
+Next, we apply the **Unsharp masking filter** to further enhance image details.
 This filter is applied to reduce the impact of noise and to preserve the fine structures that can be easily lost in subsequent stages of image processing. It works by applying a smoothing filter to the original image to create its blurred version. After that, the original image is subtracted from the blurred image to enhance the contrast and sharpness of the blood vessel edges. The edge size and the edge contrast must be adjusted in accordance with the image analyzed.
 
 The filtered files are renamed to indicate the applied filters.
@@ -129,7 +129,9 @@ The volume rendering parameters are adjusted based on the autoranges and then re
 ---
 **Interactive thresholding** is applied to the filtered files using the adjusted ranges for threshold rendering thus separating desired structures from the background.  
 
-Also we can vary the threshold mode to specify it automatically or related to root images used for threshold recalculation.
+Also we can vary the threshold mode to specify it automatically or related to root images used for threshold recalculation.  
+
+After **Interactive thresholding** we work with binary image.
 
 ---
 **Pruning filtering** and **Centrline tree** reconstruction are performed on the thresholded binary images.
@@ -137,19 +139,17 @@ Also we can vary the threshold mode to specify it automatically or related to ro
 **Pruning filter.** The filter processes the dataset and applies the specified criteria to determine which structures or objects should be removed. 
 Unwanted structures or objects that fall below the specified criteria are eliminated from the dataset.  
 
-To perform the pruning, the algorithm visits each end branch of the skeleton and prunes the visited branch from the image. An end branch is identified by identifying edges that have a degree of one. The end branch is then assigned a weight.  
+To perform the pruning, the algorithm visits each voxel object of the binary image and prunes the visited object from the image.
 
 A certain number of pruning iterations **'pruning.ports.numberOfIterations.texts[0].value'** can be set.
 
 **Centerline tree reconstruction.** This tool is used for extracting and visualizing the central axes of the blood vessels. 
 
 **'centrline_tree.ports.tubesParams.texts[0].value'** Centrline tree Slope is a penalty parameter that is responsible for creating a loop-like branch. 
+
 **'centrline_tree.ports.tubesParams.texts[1].value'** Centrline tree ZeroVal is a penalty that is responsible for creating a straight branch.   
 However, if you reduce the ZeroVal, it will not result in merging of small fragments into a bigger one but, on the contrary,  
 some of the small segments will be ignored to escape the penalty increase.  
-
-Слоуп это параметр пеналти который отвечает за образование бранча в виде петли (чтобы закольцевать бранч)
-Зеро валью это значение пеналти отвечающее за создание нового прямого бранча, при этом если уменьшить зеро валью то сегменты не сливаются в один большой, а он просто игнорирует некоторую часть сегментов для избегания пеналти
 
 >    8.4. Press 'Autosave' in Avizo to save project     
 >    8.5. Save .XML files to the folder with images     
@@ -163,6 +163,8 @@ some of the small segments will be ignored to escape the penalty increase.
 >    9.3. Define the 'selector' and select the column name to apply a threshold to remove the noise from the data.  
 >    9.4. Define 'threshold' variable for better results
 
+In this step we have to select an appropriate threshold according to the smallest value of **'Curvedlength'** in the output .xml.  
+This step is to avoid noise like two- or three-voxel meaningless branches.
 
 
 >10. Creation of datasets with a defined order
