@@ -88,6 +88,7 @@ Result = \left(\left(first\_point\_shift \, \text{or} \, second\_point\_shift\ri
 
 ```
 
+To avoid the common error of Avizo auto-threshold setting, we preform the shift of the frame to the histogram values that will allow for proper visualization.
 
 **'first_point_shift'** defines the percentage by which the left autorange limit is moved  
 Calculated as (default_autorange - default_autorange * first_point_shift)
@@ -100,19 +101,6 @@ Calculated as (default_autorange - default_autorange * first_point_shift)
 **'threshold_multiplier'**  Threshold shift multiplier allows to avoid noise and mess. It removes ranges from ranges frame that are visualized by **'threshold_multiplier'**
                               # Calculated as:
                               # ((first_point_shift/second_point_shift * ranges from autothreshold) * multiplier_for_frameshift_of_volren)) * threshold_multiplier
-
-
-    pruning.ports.numberOfIterations.texts[0].value = 10        # Pruning: number of iterations
-
-    centrline_tree.ports.tubesParams.texts[0].value = 2        # Centrline tree Slope
-    centrline_tree.ports.tubesParams.texts[1].value = 4        # Centrline tree ZeroVal
-Слоуп это параметр пеналти который отвечает за образование бранча в виде петли (чтобы закольцевать бранч)
-Зеро валью это значение пеналти отвечающее за создание нового прямого бранча, при этом если уменьшить зеро валью то сегменты не сливаются в один большой, а он просто игнорирует некоторую часть сегментов для избегания пеналти
-
-
-
-
-To avoid the common error of Avizo auto-threshold setting, we preform the shift of the frame to the histogram values that will allow for proper visualization.
 
 ---
 
@@ -145,16 +133,23 @@ Also we can vary the threshold mode to specify it automatically or related to ro
 **Pruning filtering** and **Centrline tree** reconstruction are performed on the thresholded binary images.
 
 **Pruning filter.** The filter processes the dataset and applies the specified criteria to determine which structures or objects should be removed. 
-Unwanted structures or objects that fall below the specified criteria are eliminated from the dataset.
+Unwanted structures or objects that fall below the specified criteria are eliminated from the dataset.  
 
-To perforn the skeleton pruning, the Discrete Skeleton Evolution algorithm visits each end branch of the skeleton and prunes the visited branch from the skeleton. An end branch can be easily identified by identifying edges that have a degree of one. The end branch is assigned a weight, w, by identifying the number of unique pixels the branch contribute to the original binary image as shown in the equation below.
+To perform the pruning, the algorithm visits each end branch of the skeleton and prunes the visited branch from the image. An end branch is identified by identifying edges that have a degree of one. The end branch is then assigned a weight.  
 
-The skeleton is then reconstructed using the distance transform matrix shown using the equation below, where function D is the function for rasterising a disk given its midpoint and radius.
-
-A threshold value is chosen based on the application, if the number of unique pixels contributed by the end branch is lower than the selected threshold, then the end branch is pruned from the main skeleton.
+A certain number of pruning iterations **'pruning.ports.numberOfIterations.texts[0].value'** can be set.
 
 
 **Centerline tree reconstruction.** This tool is used for extracting and visualizing the central axes of the blood vessels. 
+
+  centrline_tree.ports.tubesParams.texts[0].value = 2        # Centrline tree Slope
+    centrline_tree.ports.tubesParams.texts[1].value = 4        # Centrline tree ZeroVal
+**'centrline_tree.ports.tubesParams.texts[0].value'** Centrline tree Slope is a penalty parameter that is responsible for creating a loop-like branch. 
+**'centrline_tree.ports.tubesParams.texts[1].value'** Centrline tree ZeroVal is a penalty that is responsible for creating a straight branch.  
+However, if you reduce the ZeroVal, it will not result in merging of small fragments into a bigger one but, on the contrary,  
+some of the small segments will be ignored to escape the penalty increase.
+Слоуп это параметр пеналти который отвечает за образование бранча в виде петли (чтобы закольцевать бранч)
+Зеро валью это значение пеналти отвечающее за создание нового прямого бранча, при этом если уменьшить зеро валью то сегменты не сливаются в один большой, а он просто игнорирует некоторую часть сегментов для избегания пеналти
 
 >    8.4. Press 'Autosave' in Avizo to save project     
 >    8.5. Save .XML files to the folder with images     
