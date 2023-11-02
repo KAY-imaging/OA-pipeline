@@ -147,6 +147,13 @@ Also we can vary the threshold mode to specify it automatically or related to ro
 **Pruning filter.** The filter processes the dataset and applies the specified criteria to determine which structures or objects should be removed. 
 Unwanted structures or objects that fall below the specified criteria are eliminated from the dataset.
 
+To perforn the skeleton pruning, the Discrete Skeleton Evolution algorithm visits each end branch of the skeleton and prunes the visited branch from the skeleton. An end branch can be easily identified by identifying edges that have a degree of one. The end branch is assigned a weight, w, by identifying the number of unique pixels the branch contribute to the original binary image as shown in the equation below.
+
+The skeleton is then reconstructed using the distance transform matrix shown using the equation below, where function D is the function for rasterising a disk given its midpoint and radius.
+
+A threshold value is chosen based on the application, if the number of unique pixels contributed by the end branch is lower than the selected threshold, then the end branch is pruned from the main skeleton.
+
+
 **Centerline tree reconstruction.** This tool is used for extracting and visualizing the central axes of the blood vessels. 
 
 >    8.4. Press 'Autosave' in Avizo to save project     
