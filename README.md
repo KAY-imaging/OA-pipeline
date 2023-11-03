@@ -200,29 +200,23 @@ It can vary from 0 to 360 degrees and is used to determine the horizontal orient
 Tortuosity = \frac{CurvedLength}{ChordLength} 
 ```
 
-**Number of empty endpoints** :  The number of the end points of all the segments that do not contact any other segments.
+**Number of empty endpoints** :  The number of the end points of all the segments that do not contact any other segments. Trash segments not accounted for.
 
-**Number of branchpoints** :     
+**Number of branchpoints** : The number of points at which the object branches or has more than one neighbor.
 
-**Max Coordination Number** :      
+**Max Coordination Number** : The maximum number of branchpoints at some point in the image.
 
----
-
-**Volume_Sum_perImage [um^3]** : Calculated as:
+**Volume_Sum_perImage [um^3]** : The sum of volume for all the segments in the image. Calculated as:
 ```math
 dataset['Volume\_Sum\_perImage [um^3]'] = \frac{volume\_sum}{10^9} 
 ```
 
----
-
-**Geometrical_Volume_perImage [um^3]** : Calculated as:
+**Geometrical_Volume_perImage [um^3]** : The sum of all the segment volumes in the image, based on the assuption that each vessel segment is a cylinder. Calculated as the geometrical volume of all the cylindrical segments using the **'CurvedLength'** and **'MeanRadius'**. Provided to avoid segmentation and imaging error.
 ```math
 dataset['Geometrical\_Volume\_perImage [um^3]'] = \frac{\sum_{i} (MeanRadius_i)^2 \pi CurvedLength_i}{10^9} 
 ```
 
----
-
-**Imaging_Error_perImage** : Calculated as:
+**Imaging_Error_perImage** : The ratio of the **'Geometrical_Volume_perImage'** to the **'Volume_Sum_perImage'** Calculated as:
 ```math
 dataset['Imaging\_Error\_perImage'] = 1 - \frac{Geometrical\_Volume\_perImage [um^3]}{Volume\_Sum\_perImage [um^3]}
 ```
