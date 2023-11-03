@@ -193,49 +193,43 @@ It can vary from -90 to 90 degrees and is used to determine the vertical orienta
 The angle between the horizontal plane and the plane in which the main axis of the object lies.
 It can vary from 0 to 360 degrees and is used to determine the horizontal orientation of an object.
 
-**ChordLength** :       
-
+**ChordLength** : The vector length from the first to the last segment point, which does not take the curvature into the account.
 
 **Tortuosity** : Vessels Tortuosity of the skeletonized vessel segment. Calculated as:
 ```math
 Tortuosity = \frac{CurvedLength}{ChordLength} 
 ```
 
-
-**Number of empty endpoints** :   
-
----
+**Number of empty endpoints** :  The number of the end points of all the segments that do not contact any other segments.
 
 **Number of branchpoints** :     
-
----
 
 **Max Coordination Number** :      
 
 ---
 
-**Volume_Sum_perImage [um^3]** :   
+**Volume_Sum_perImage [um^3]** : Calculated as:
 ```math
 dataset['Volume\_Sum\_perImage [um^3]'] = \frac{volume\_sum}{10^9} 
 ```
 
 ---
 
-**Geometrical_Volume_perImage [um^3]**
+**Geometrical_Volume_perImage [um^3]** : Calculated as:
 ```math
 dataset['Geometrical\_Volume\_perImage [um^3]'] = \frac{\sum_{i} (MeanRadius_i)^2 \pi CurvedLength_i}{10^9} 
 ```
 
 ---
 
-**Imaging_Error_perImage** 
+**Imaging_Error_perImage** : Calculated as:
 ```math
 dataset['Imaging\_Error\_perImage'] = 1 - \frac{Geometrical\_Volume\_perImage [um^3]}{Volume\_Sum\_perImage [um^3]}
 ```
 
 ---
 
-**Vessels_CurvedLength_Sum_perImage [um]**   
+**Vessels_CurvedLength_Sum_perImage [um]** : Calculated as:
 ```math
 curvedlength\_sum = \sum_{i} CurvedLength_i
 dataset['Vessels\_CurvedLength\_Sum\_perImage [um]'] = \frac{curvedlength\_sum}{1000}
@@ -243,28 +237,28 @@ dataset['Vessels\_CurvedLength\_Sum\_perImage [um]'] = \frac{curvedlength\_sum}{
 
 ---
 
-**Weighted_MeanRadius_perImage [um]**     
+**Weighted_MeanRadius_perImage [um]** : Calculated as:
 ```math
 dataset['Weighted\_MeanRadius\_perImage [um]'] = \frac{\sum_{i} MeanRadius_i \cdot CurvedLength_i}{curvedlength\_sum \cdot 1000}
 ```
 
 ---
 
-**Weighted_MeanTortuosity_perImage**       
+**Weighted_MeanTortuosity_perImage** : Calculated as:       
 ```math
 dataset['Weighted\_MeanTortuosity\_perImage'] = \frac{\sum_{i} Tortuosity_i \cdot CurvedLength_i}{curvedlength\_sum}
 ```
 
 ---
 
-**Weighted_Segment_MeanRadius_perSegment [um]**
+**Weighted_Segment_MeanRadius_perSegment [um]** : Calculated as:
 ```math
 dataset['Weighted\_Segment\_MeanRadius\_perSegment [um]'] = \frac{MeanRadius_i \cdot CurvedLength_i}{curvedlength\_sum \cdot 1000} 
 ```
 
 ---
 
-**Weighted_Segment_Volume_perSegment [um^3]**  
+**Weighted_Segment_Volume_perSegment [um^3]** : Calculated as:  
 ```math
 dataset['Weighted\_Segment\_Volume\_perSegment [um^3]'] = \frac{Volume_i \cdot CurvedLength_i}{curvedlength\_sum}
 ```
