@@ -179,18 +179,18 @@ This step is to avoid noise like two- or three-voxel meaningless branches.
 
 **Dataset features:**
 
-**CurvedLength** : Curved lenth [nm] of the skeletonized vessel segment  
+**CurvedLength** : Curved lenth [nm] of the skeletonized vessel segment.  
 
-**MeanRadius** : Mean radius [nm] of the skeletonized vessel segment 
+**MeanRadius** : Mean radius [nm] of the skeletonized vessel segment.  
 
-**Volume** : Volume [nm^3]  of the skeletonized vessel segment   
+**Volume** : Volume [nm^3]  of the skeletonized vessel segment.  
 
 **OrientationTheta** : Topological parameter of the segment orientation relative to the coordinate axis.
-The angle between a horizontal plane and a plane perpendicular to the object's principal axis.  
+The angle between a horizontal plane and a plane perpendicular to the object's principal axis.
 It can vary from -90 to 90 degrees and is used to determine the vertical orientation of an object.
 
 **OrientationPhi** : Topological parameter of the segment orientation relative to the coordinate axis.
-The angle between the horizontal plane and the plane in which the main axis of the object lies.  
+The angle between the horizontal plane and the plane in which the main axis of the object lies.
 It can vary from 0 to 360 degrees and is used to determine the horizontal orientation of an object.
 
 **ChordLength** :       
