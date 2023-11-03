@@ -259,27 +259,23 @@ dataset['Weighted\_Segment\_Volume\_perSegment [um^3]'] = \frac{Volume_i \cdot C
 
 ---
 
-**Total Image Volume [nm^3]**   
+**Total Image Volume [nm^3]** : The volume of all the vessel segments per image.
+
+**ROI Volume [nm^3]** : The volume of all the vessel segments per manually selected ROI.
+
+**Vessels in ROI Volume (Labeled Volume after pruning before denoizing) [nm^3]** :
 
 ---
 
-**ROI Volume [nm^3]**
+**Ratio of ROI Mask to whole image** :   
 
 ---
 
-**Vessels in ROI Volume (Labeled Volume after pruning before denoizing) [nm^3]**
+**Ratio of Vessel Mask to whole image** :    
 
 ---
 
-**Ratio of ROI Mask to whole image**   
-
----
-
-**Ratio of Vessel Mask to whole image**    
-
----
-
-**Ratio of Vessel Mask to background ROI**      
+**Ratio of Vessel Mask to background ROI** :      
 
 ---
 
