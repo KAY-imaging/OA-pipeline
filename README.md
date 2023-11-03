@@ -193,27 +193,28 @@ It can vary from -90 to 90 degrees and is used to determine the vertical orienta
 The angle between the horizontal plane and the plane in which the main axis of the object lies.  
 It can vary from 0 to 360 degrees and is used to determine the horizontal orientation of an object.
 
-**ChordLength**       
+**ChordLength** :       
+
+
+**Tortuosity** : Vessels Tortuosity of the skeletonized vessel segment. Calculated as:
+```math
+Tortuosity = \frac{CurvedLength}{ChordLength} 
+```
+
+
+**Number of empty endpoints** :   
 
 ---
 
-**Tortuosity**   
+**Number of branchpoints** :     
 
 ---
 
-**Number of empty endpoints**  
+**Max Coordination Number** :      
 
 ---
 
-**Number of branchpoints**    
-
----
-
-**Max Coordination Number**     
-
----
-
-**Volume_Sum_perImage [um^3]**  
+**Volume_Sum_perImage [um^3]** :   
 ```math
 dataset['Volume\_Sum\_perImage [um^3]'] = \frac{volume\_sum}{10^9} 
 ```
