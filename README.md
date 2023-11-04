@@ -275,12 +275,12 @@ dataset['Weighted\_Segment\_Volume\_perSegment [um^3]'] = \frac{Volume_i \cdot C
 
 
 
->    frame_for_export
+**frame_for_export**
 
 >    Consists of 'mean' by dataframe observation.
 >    Each observation defined by sample group was provided in merging.
 
->    one_big_merged_frame
+**one_big_merged_frame**
 
 >    Consists of all dataframes with column 'Condition', where the sample names are presented
 
