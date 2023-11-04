@@ -247,23 +247,19 @@ dataset['Weighted\_Segment\_MeanRadius\_perSegment [um]'] = \frac{MeanRadius_i \
 dataset['Weighted\_Segment\_Volume\_perSegment [um^3]'] = \frac{Volume_i \cdot CurvedLength_i}{curvedlength\_sum}
 ```
 
-**Total Image Volume [nm^3]** : The volume of all the vessel segments per image calculated according to the total image dimensions.  
+### Frame for export features
 
-**ROI Volume [nm^3]** : The volume of all the vessel segments per manually selected ROI. The value extracted from Binary mask before skeletonization. 
+**Total Image Volume [nm^3]** : The volume of all voxels per image calculated according to the total image dimensions  [nm^3].  
 
-**Vessels in ROI Volume (Labeled Volume after pruning before denoizing) [nm^3]** :
+**ROI Volume [nm^3]** :  The volume of all voxels per selected ROI calculated according to the total ROI dimensions  [nm^3].
 
----
+**Vessels in ROI Volume (Labeled Volume after pruning before denoizing) [nm^3]** : The volume of all the vessel segments per manually selected ROI  [nm^3]. The value extracted from Binary mask before skeletonization.
 
-**Ratio of ROI Mask to whole image** :   
+**Ratio of ROI Mask to whole image** : The ratio of ROI mask volume to the whole image volume.   
 
----
+**Ratio of Vessel Mask to whole image** : The ratio of Vessel mask volume to the whole image volume.   
 
-**Ratio of Vessel Mask to whole image** :    
-
----
-
-**Ratio of Vessel Mask to background ROI** :      
+**Ratio of Vessel Mask to background ROI** : The ratio of Vessel mask volume to the background ROI volume.     
 
 ---
 
