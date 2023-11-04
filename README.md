@@ -290,12 +290,11 @@ dataset['Weighted\_Segment\_Volume\_perSegment [um^3]'] = \frac{Volume_i \cdot C
 
 >    Makes plots according to 'Condition' column and our groups
 
-
+---
 
 Statistics are collected using **Spatial Graph Statistics** on the **Centrline tree** calculations results.
 
-Статистические критерии на ваш выбор и пропишем что менять 
-Далее мы строим бокс плоты, вайолин плоты, вы мможете собиратьстатистику для ваших данных в полуавтоматическом режиме, используя Статистические критерии на ваш выбор
+In this step we build box plots and violin plots allowing you to collect statistics for your data in semi-automatic mode, using statistical criteria of your choice.
 
 ---
 The project is autosaved in **Amira/Avizo** format.
