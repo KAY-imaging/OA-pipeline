@@ -111,37 +111,29 @@ To vary Hessian filter settings you need to specify **'hessian_filter'** paramet
 Next, we apply the **Unsharp masking filter** to further enhance image details.
 This filter is applied to reduce the impact of noise and to preserve the fine structures that can be easily lost in subsequent stages of image processing. It works by applying a smoothing filter to the original image to create its blurred version. After that, the original image is subtracted from the blurred image to enhance the contrast and sharpness of the blood vessel edges. The edge size and the edge contrast must be adjusted in accordance with the image analyzed.
 
-The filtered files are renamed to indicate the applied filters.
-
 ---
 **Volume rendering** is further performed on the filtered files.
 Ranges for intensity rendering are collected to determine appropriate rendering ranges for each file.
 The volume rendering parameters are adjusted based on the autoranges and then recalculated for appropriate image display.
 
 ---
-**Interactive thresholding** is applied to the filtered files using the adjusted ranges for threshold rendering thus separating desired structures from the background.  
-
-Also we can vary the threshold mode to specify it automatically or related to root images used for threshold recalculation.  
-
+**Interactive thresholding** is applied to the filtered files using the adjusted ranges for threshold rendering thus separating desired structures from the background.
+Also we can vary the threshold mode to specify it automatically or related to root images used for threshold recalculation.
 After **Interactive thresholding** we work with binary image.
 
 ---
 **Pruning filtering** and **Centrline tree** reconstruction are performed on the thresholded binary images.
 
 **Pruning filter.** The filter processes the dataset and applies the specified criteria to determine which structures or objects should be removed. 
-Unwanted structures or objects that fall below the specified criteria are eliminated from the dataset.  
+Unwanted structures or objects that fall below the specified criteria are eliminated from the dataset.
+To perform the pruning, the algorithm visits each voxel object of the binary image and prunes the visited object from the image.  
+A certain number of pruning iterations **'pruning.ports.numberOfIterations.texts[0].value'** can be set.  
 
-To perform the pruning, the algorithm visits each voxel object of the binary image and prunes the visited object from the image.
 
-A certain number of pruning iterations **'pruning.ports.numberOfIterations.texts[0].value'** can be set.
-
-**Centerline tree reconstruction.** This tool is used for extracting and visualizing the central axes of the blood vessels. 
-
-**'centrline_tree.ports.tubesParams.texts[0].value'** Centrline tree Slope is a penalty parameter that is responsible for creating a loop-like branch. 
-
-**'centrline_tree.ports.tubesParams.texts[1].value'** Centrline tree ZeroVal is a penalty that is responsible for creating a straight branch.   
-However, if you reduce the ZeroVal, it will not result in merging of small fragments into a bigger one but, on the contrary,  
-some of the small segments will be ignored to escape the penalty increase.  
+**Centerline tree reconstruction.** This tool is used for extracting and visualizing the central axes of the blood vessels.  
+**'centrline_tree.ports.tubesParams.texts[0].value'** Centrline tree Slope is a penalty parameter that is responsible for creating a loop-like branch.  
+**'centrline_tree.ports.tubesParams.texts[1].value'** Centrline tree ZeroVal is a penalty that is responsible for creating a straight branch.  
+However, if you reduce the ZeroVal, it will not result in merging of small fragments into a bigger one but, on the contrary, some of the small segments will be ignored to escape the penalty increase.  
 
 >    8.4. Press 'Autosave' in Avizo to save project     
 >    8.5. Save .XML files to the folder with images     
