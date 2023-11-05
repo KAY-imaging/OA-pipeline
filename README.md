@@ -14,7 +14,7 @@ Here we want to describe how our pipeline could be implemented to characterize 3
 
 The **'matlab_script_converter_nifti'**, **'folder_path'** and **'out_path'** need to be defined  
 The script retrieves a list of files from a specified directory. 
-It uploads files from 'folder_path', converts them using Nifti dimentions converter - a MATLAB script that allows file conversion into the .nii format. 
+It uploads files from 'folder_path', converts them using Nifti dimentions converter - a MATLAB script that allows file conversion into the .nii format.  
 Upon conversion the script returns the converted files to 'out_path' folder.
 
 >2. Paths and tags  
