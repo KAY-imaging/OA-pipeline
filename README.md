@@ -151,8 +151,7 @@ This step is to avoid noise like two- or three-voxel meaningless branches.
 
 > 10. Creation of datasets with a defined order
 >  
->    10.1. Define the dataset order for merging  
->    (e.g. if there are 4 datasets that need to be splitted into two groups (based on filename), specify 2, 2 in merging_order    
+>    10.1. Define the dataset order for merging (e.g. if there are 4 datasets that need to be splitted into two groups (based on filename), specify 2, 2 in merging_order    
 >    10.2. Merging allows to create dataframes that are specifically suited for your sampling conditions  
 >    10.3. One of the outputs is a merged DataFrame that contains a column named 'conditions' with the filenames of all the images that were analyzed  
 >    10.4. The other one is 'mean' dataset according to the 'merging order' and mode  
