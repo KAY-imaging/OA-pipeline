@@ -12,7 +12,7 @@ Here we want to describe how our pipeline could be implemented to characterize 3
 >  1.1. Uploads file from 'folder_path'  
 >  1.2. Returns converted files to 'out_path' folder
 
-The **'matlab_script_converter_nifti'**, **'folder_path'** and **'out_path'** need to be defined  
+The **'matlab_script_converter_nifti'**, **'folder_path'** and **'out_path'** need to be defined.  
 The script retrieves a list of files from a specified directory. 
 It uploads files from 'folder_path', converts them using Nifti dimentions converter - a MATLAB script that allows file conversion into the .nii format.  
 Upon conversion the script returns the converted files to 'out_path' folder.
@@ -68,9 +68,8 @@ By default the extension is set to .nii but it can be changed to your desired fi
 
 The filters we provide for our pipeline can be modified with the following settings:             
 
-**'number_of_images_for_threshold'** is a function that sets a number of images in the series.  
-It allows you either to define different thresholds for every single image or define the threshold for one image  
-and then apply it to all the other images in the series.   
+**'number_of_images_for_threshold'** is a function that sets a number of images in the series for threshold calculation.  
+It allows you either to define different thresholds for every single image or define the threshold for one image by specifying the **thr** tag in image name and then apply it to all the other images in the series.   
 
 If number_of_images_for_threshold = 0, the threshold will be calculated for each image
 
