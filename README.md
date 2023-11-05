@@ -209,22 +209,22 @@ Vessels\_CurvedLength\_Sum\_perImage = \frac{\sum_{i} CurvedLength_i}{1000}
 
 **Weighted_MeanRadius_perImage [µm]** : **'MeanRadius'** per each image according to **'CurvedLength'**. Calculated as:
 ```math
-dataset['Weighted\_MeanRadius\_perImage [µm]'] = \frac{\sum_{i} MeanRadius_i \cdot CurvedLength_i}{curvedlength\_sum \cdot 1000}
+dataset['Weighted\_MeanRadius\_perImage [µm]'] = \frac{\sum_{i} MeanRadius_i \cdot CurvedLength_i}{\sum_{i} CurvedLength_i \cdot 1000}
 ```
 
 **Weighted_MeanTortuosity_perImage** : **'MeanTortuosity'** per each image according to **'CurvedLength'**. Calculated as:       
 ```math
-dataset['Weighted\_MeanTortuosity\_perImage'] = \frac{\sum_{i} Tortuosity_i \cdot CurvedLength_i}{curvedlength\_sum}
+dataset['Weighted\_MeanTortuosity\_perImage'] = \frac{\sum_{i} Tortuosity_i \cdot CurvedLength_i}{\sum_{i} CurvedLength_i}
 ```
 
 **Weighted_Segment_MeanRadius_perSegment [µm]** : Weighted by **'CurvedLength'** value of **'MeanRadius'** calculated for each segment. Calculated as:
 ```math
-dataset['Weighted\_Segment\_MeanRadius\_perSegment [µm]'] = \frac{MeanRadius_i \cdot CurvedLength_i}{curvedlength\_sum \cdot 1000} 
+dataset['Weighted\_Segment\_MeanRadius\_perSegment [µm]'] = \frac{MeanRadius_i \cdot CurvedLength_i}{\sum_{i} CurvedLength_i \cdot 1000} 
 ```
 
 **Weighted_Segment_Volume_perSegment [um<sup>3</sup>]** : Weighted by **'CurvedLength'** value of **'Volume'** calculated for each segment.  Calculated as:  
 ```math
-dataset['Weighted\_Segment\_Volume\_perSegment [µm^3]'] = \frac{Volume_i \cdot CurvedLength_i}{curvedlength\_sum}
+dataset['Weighted\_Segment\_Volume\_perSegment [µm^3]'] = \frac{Volume_i \cdot CurvedLength_i}{\sum_{i} CurvedLength_i}
 ```
 
 ### Frame for export features
