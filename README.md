@@ -219,7 +219,7 @@ Weighted\_MeanTortuosity\_perImage = \frac{\sum_{i} Tortuosity_i \cdot CurvedLen
 
 **Weighted_Segment_MeanRadius_perSegment** : Weighted by **'CurvedLength'** value of **'MeanRadius'** calculated for each segment. Calculated as:
 ```math
-Weighted\_Segment\_MeanRadius\_perSegment = \frac{MeanRadius_i \cdot CurvedLength_i}{\sum_{i} CurvedLength_i \cdot 1000} 
+Weighted\_Segment\_MeanRadius\_perSegment = \frac{MeanRadius_i \cdot CurvedLength_i}{\sum_{i} CurvedLength_i} 
 ```
 
 **Weighted_Segment_Volume_perSegment** : Weighted by **'CurvedLength'** value of **'Volume'** calculated for each segment.  Calculated as:  
