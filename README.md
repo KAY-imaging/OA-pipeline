@@ -154,11 +154,14 @@ This step is to avoid noise like two- or three-voxel meaningless branches.
 >    10.1. Define the dataset order for merging  
 >    (e.g. if there are 4 datasets that need to be splitted into two groups (based on filename), specify 2, 2 in merging_order    
 >    10.2. Merging allows to create dataframes that are specifically suited for your sampling conditions  
->    10.3. One of the outputs is a merged DataFrame that contains a column named 'conditions' with the filenames of all the images that were analyzed  
->    10.4. The other one is 'mean' dataset according to the 'merging order' and mode  
->    10.5. This dataset we save in .XLSX format, that are easy to analyse  
+>    10.3. One of the outputs is a merged **one_big_merged_frame** that contains a column named 'Condition' with the filenames of all the images that were analyzed. Consists of all merged data for all observations.
+>    (later it uses for plotting and statistics calculations)
+>    10.4. The other one **frame_for_export** consists of mean, weigted mean, and ROI features according to the 'merging order' and mode. Consists of data by observation. Each observation defined by sample group was provided in merging.  
+>    10.5. This **frame_for_export** dataset we save in .XLSX format, that are easy to analyse  
 
-### Dataset features:
+
+
+### Both datasets features:
 
 **CurvedLength** : Curved lenth [nm] of the skeletonized vessel segment.  
 
@@ -243,32 +246,10 @@ Weighted\_Segment\_Volume\_perSegment = \frac{Volume_i \cdot CurvedLength_i}{\su
 
 ---
 
-
->    Output dataframes:
-
-
-
-
-
-
-
-
-
-
-**frame_for_export**
-
->    Consists of 'mean' by dataframe observation.
->    Each observation defined by sample group was provided in merging.
-
-**one_big_merged_frame**
-
->    Consists of all dataframes with column 'Condition', where the sample names are presented
-
-
 >11. Boxplots for all samples with respective stats and annotations
->    Here we work with 'one_big_merged_frame' dataset
-
->    Makes plots according to 'Condition' column and our groups
+>    Here we work with **'one_big_merged_frame'** dataset
+>
+>    Makes plots according to **'Condition'** column and our groups
 
 ---
 
