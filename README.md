@@ -71,12 +71,12 @@ The filters we provide for our pipeline can be modified with the following setti
 **'number_of_images_for_threshold'** is a function that sets a number of images in the series for threshold calculation.  
 It allows you either to define different thresholds for every single image or define the threshold for one image by specifying the **thr** tag in image name and then apply it to all the other images in the series.   
 
-If number_of_images_for_threshold = 0, the threshold will be calculated for each image
+If **number_of_images_for_threshold** = 0, the threshold will be calculated for each image
 
-### Calculation 1:
+### Method for calculating threshold in Amira / Avizo software for correct display and correct validation:
 
 ```math
-Result_1 = default\_autorange - default\_autorange \times first\_point\_shift  
+Step\_1\_threshold = default\_autorange - default\_autorange \times first\_point\_shift  
 ```
 
 ```math
