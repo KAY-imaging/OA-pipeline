@@ -78,27 +78,26 @@ If **number_of_images_for_threshold** = 0, the threshold will be calculated for 
 
 To avoid the common error of Avizo auto-threshold setting, we preform the shift of the frame to the histogram values that will allow for proper visualization.
 
-**'first_point_shift'** defines the percentage by which the left autorange limit is moved.  
+**'first_point_shift' (1)** defines the percentage by which the left autorange limit is moved.  
 Left range limit recalculated as:  
 ```math
 Left\_lim\_shift = default\_autorange - default\_autorange \times first\_point\_shift  
 ```
 
-**'second_point_shift'** defines the percentage by which the right autorange limit is moved.  
+**'second_point_shift' (2)** defines the percentage by which the right autorange limit is moved.  
 Right range limit recalculated as:  
 ```math
 Right\_lim\_shift = default\_autorange - default\_autorange \times second\_point\_shift  
 ```
 
-**'multiplier_for_frameshift_of_volren'** it is a multiplier that performs the range frameshift for the 'Volume Rendering' filter  
+**'multiplier_for_frameshift_of_volren' (3)** it is a multiplier that performs the range frameshift for the 'Volume Rendering' filter  
 If the image is too bright, the settings can be adjusted respectively
 
 
-**'threshold_multiplier'**  Threshold shift multiplier allows to avoid noise and mess. It removes ranges from ranges frame that are visualized by **'threshold_multiplier'**.  
+**'threshold_multiplier' (4)**  Threshold shift multiplier allows to avoid noise and mess. It removes ranges from ranges frame that are visualized by **'threshold_multiplier'**.  
 Both ranges recalculated as: 
 ```math
-Result = \left(\left(first\_point\_shift \, \text{or} \, second\_point\_shift\right) \times {ranges\_from\_autothreshold} \times {multiplier\_for\_frameshift\_of\_volren}\right) 
-\times {threshold\_multiplier}
+Result = \left(\left((1) \, \text{or} \, (2) \times {ranges\_from\_autothreshold} \times {(3)}\right) \times {(4)}
 ```
 
 
