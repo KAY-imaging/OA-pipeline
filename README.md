@@ -68,10 +68,10 @@ By default the extension is set to .nii but it can be changed to your desired fi
 
 The filters we provide for our pipeline can be modified with the following settings:             
 
-**'number_of_images_for_threshold'** is a function that sets a number of images in the series for threshold calculation.  
+**'number_of_images_for_threshold'** is a function that sets a number of images in the series for threshold calculation.
 It allows you either to define different thresholds for every single image or define the threshold for one image by specifying the **thr** tag in image name and then apply it to all the other images in the series.   
 
-If **number_of_images_for_threshold** = 0, the threshold will be calculated for each image
+If **number_of_images_for_threshold** = 0, the threshold will be calculated for each image.
 
 ### Method for calculating threshold in Amira / Avizo software for correct display and validation:
 
