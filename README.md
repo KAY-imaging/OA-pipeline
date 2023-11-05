@@ -199,7 +199,7 @@ Geometrical\_Volume\_perImage = \frac{\sum_{i} (MeanRadius_i)^2 \cdot \pi \cdot 
 
 **Imaging_Error_perImage** : The ratio of the **'Geometrical_Volume_perImage'** to the **'Volume_Sum_perImage'**. Calculated as:
 ```math
-Imaging\_Error\_perImage = 1 - \frac{Geometrical\_Volume\_perImage [µm^3]}{Volume\_Sum\_perImage [µm^3]}
+Imaging\_Error\_perImage = 1 - \frac{Geometrical\_Volume\_perImage}{Volume\_Sum\_perImage}
 ```
 
 **Vessels_CurvedLength_Sum_perImage [µm]** : Sum of all **'CurvedLength'** per image [µm]. Calculated as:
