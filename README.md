@@ -1,6 +1,6 @@
 
 # OA-pipeline
-The provided Python script is a pipeline for processing and analyzing images of vascularization using the Thermo Fisher Scientific Amira / Avizo 3D Visualization & Analysis Software (2022.2). It applies a series of filters and processing techniques to enhance medical image data and extract  
+The provided Python script is a pipeline for processing and analyzing images of vascularization using the Thermo Fisher Scientific Amira / Avizo 3D Visualization & Analysis Software (2022.2). It applies a series of filters and processing techniques to enhance medical image data and extract
 meaningful information. It utilizes features provided by the Amira / Avizo software to perform these operations and save the results for further analysis.
 
 ![Graph_summary.svg](Graph_summary.svg)
