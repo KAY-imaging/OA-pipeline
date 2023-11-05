@@ -97,8 +97,8 @@ If the image is too bright, the settings can be adjusted respectively
 **'threshold_multiplier'**  Threshold shift multiplier allows to avoid noise and mess. It removes ranges from ranges frame that are visualized by **'threshold_multiplier'**.  
 Both ranges recalculated as: 
 ```math
-Result = \left(\left(first\_point\_shift \, \text{or} \, second\_point\_shift\right) \times {ranges\_from\_autothreshold} \times  
-          \times {multiplier\_for\_frameshift\_of\_volren}\right) \times {threshold\_multiplier}
+Result = \left(\left(first\_point\_shift \, \text{or} \, second\_point\_shift\right) \times {ranges\_from\_autothreshold} \times {multiplier\_for\_frameshift\_of\_volren}\right) 
+\times {threshold\_multiplier}
 ```
 
 
