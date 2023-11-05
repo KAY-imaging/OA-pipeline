@@ -189,23 +189,22 @@ Tortuosity = \frac{CurvedLength}{ChordLength}
 
 **Volume_Sum_perImage [µm<sup>3</sup>]** : The sum of volume for all the segments in the image [µm<sup>3</sup>]. Calculated as:
 ```math
-Volume\_Sum\_perImage [µm^3] = \frac{volume\_sum}{10^9} 
+Volume\_Sum\_perImage = \frac{volume\_sum}{10^9} 
 ```
 
 **Geometrical_Volume_perImage [µm<sup>3</sup>]** : The sum of all the segment volumes in the image [µm<sup>3</sup>], based on the assumption that each vessel segment is a cylinder. Calculated as the geometrical volume of all the cylindrical segments using the **'CurvedLength'** and **'MeanRadius'**. Provided to avoid segmentation and imaging error.
 ```math
-dataset['Geometrical\_Volume\_perImage [µm^3]'] = \frac{\sum_{i} (MeanRadius_i)^2 \pi CurvedLength_i}{10^9} 
+Geometrical\_Volume\_perImage = \frac{\sum_{i} (MeanRadius_i)^2 \pi CurvedLength_i}{10^9} 
 ```
 
 **Imaging_Error_perImage** : The ratio of the **'Geometrical_Volume_perImage'** to the **'Volume_Sum_perImage'**. Calculated as:
 ```math
-dataset['Imaging\_Error\_perImage'] = 1 - \frac{Geometrical\_Volume\_perImage [µm^3]}{Volume\_Sum\_perImage [µm^3]}
+Imaging\_Error\_perImage = 1 - \frac{Geometrical\_Volume\_perImage [µm^3]}{Volume\_Sum\_perImage [µm^3]}
 ```
 
 **Vessels_CurvedLength_Sum_perImage [µm]** : Sum of all **'CurvedLength'** per image [µm]. Calculated as:
 ```math
-curvedlength\_sum = \sum_{i} CurvedLength_i
-dataset['Vessels\_CurvedLength\_Sum\_perImage [µm]'] = \frac{curvedlength\_sum}{1000}
+Vessels\_CurvedLength\_Sum\_perImage = \frac{\sum_{i} CurvedLength_i}{1000}
 ```
 
 **Weighted_MeanRadius_perImage [µm]** : **'MeanRadius'** per each image according to **'CurvedLength'**. Calculated as:
