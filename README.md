@@ -187,9 +187,9 @@ Tortuosity = \frac{CurvedLength}{ChordLength}
 
 **Max Coordination Number** : The maximum number of branchpoints at some point in the image.
 
-**Volume_Sum_perImage [um^3]** : The sum of volume for all the segments in the image [µm^3]. Calculated as:
+**Volume_Sum_perImage [<sup>um^3</sup>]** : The sum of volume for all the segments in the image [µm^3]. Calculated as:
 ```math
-dataset['Volume\_Sum\_perImage [um^3]'] = \frac{volume\_sum}{10^9} 
+Volume\_Sum\_perImage [um^3] = \frac{volume\_sum}{10^9} 
 ```
 
 **Geometrical_Volume_perImage [um^3]** : The sum of all the segment volumes in the image [µm^3], based on the assumption that each vessel segment is a cylinder. Calculated as the geometrical volume of all the cylindrical segments using the **'CurvedLength'** and **'MeanRadius'**. Provided to avoid segmentation and imaging error.
