@@ -164,7 +164,7 @@ This step is to avoid noise like two- or three-voxel meaningless branches.
 
 **MeanRadius** : Mean radius [nm] of the skeletonized vessel segment.  
 
-**Volume** : Volume [nm^3]  of the skeletonized vessel segment.  
+**Volume** : Volume [nm<sup>3</sup>]  of the skeletonized vessel segment.  
 
 **OrientationTheta** : Topological parameter of the segment orientation relative to the coordinate axis.
 The angle between a horizontal plane and a plane perpendicular to the object's principal axis.
@@ -187,30 +187,30 @@ Tortuosity = \frac{CurvedLength}{ChordLength}
 
 **Max Coordination Number** : The maximum number of branchpoints at some point in the image.
 
-**Volume_Sum_perImage [<sup>um^3</sup>]** : The sum of volume for all the segments in the image [µm^3]. Calculated as:
+**Volume_Sum_perImage [µm<sup>3</sup>]** : The sum of volume for all the segments in the image [µm<sup>3</sup>]. Calculated as:
 ```math
-Volume\_Sum\_perImage [um^3] = \frac{volume\_sum}{10^9} 
+Volume\_Sum\_perImage [µm^3] = \frac{volume\_sum}{10^9} 
 ```
 
-**Geometrical_Volume_perImage [um^3]** : The sum of all the segment volumes in the image [µm^3], based on the assumption that each vessel segment is a cylinder. Calculated as the geometrical volume of all the cylindrical segments using the **'CurvedLength'** and **'MeanRadius'**. Provided to avoid segmentation and imaging error.
+**Geometrical_Volume_perImage [µm<sup>3</sup>]** : The sum of all the segment volumes in the image [µm<sup>3</sup>], based on the assumption that each vessel segment is a cylinder. Calculated as the geometrical volume of all the cylindrical segments using the **'CurvedLength'** and **'MeanRadius'**. Provided to avoid segmentation and imaging error.
 ```math
-dataset['Geometrical\_Volume\_perImage [um^3]'] = \frac{\sum_{i} (MeanRadius_i)^2 \pi CurvedLength_i}{10^9} 
+dataset['Geometrical\_Volume\_perImage [µm^3]'] = \frac{\sum_{i} (MeanRadius_i)^2 \pi CurvedLength_i}{10^9} 
 ```
 
 **Imaging_Error_perImage** : The ratio of the **'Geometrical_Volume_perImage'** to the **'Volume_Sum_perImage'**. Calculated as:
 ```math
-dataset['Imaging\_Error\_perImage'] = 1 - \frac{Geometrical\_Volume\_perImage [um^3]}{Volume\_Sum\_perImage [um^3]}
+dataset['Imaging\_Error\_perImage'] = 1 - \frac{Geometrical\_Volume\_perImage [µm^3]}{Volume\_Sum\_perImage [µm^3]}
 ```
 
-**Vessels_CurvedLength_Sum_perImage [um]** : Sum of all **'CurvedLength'** per image [µm]. Calculated as:
+**Vessels_CurvedLength_Sum_perImage [µm]** : Sum of all **'CurvedLength'** per image [µm]. Calculated as:
 ```math
 curvedlength\_sum = \sum_{i} CurvedLength_i
-dataset['Vessels\_CurvedLength\_Sum\_perImage [um]'] = \frac{curvedlength\_sum}{1000}
+dataset['Vessels\_CurvedLength\_Sum\_perImage [µm]'] = \frac{curvedlength\_sum}{1000}
 ```
 
-**Weighted_MeanRadius_perImage [um]** : **'MeanRadius'** per each image according to **'CurvedLength'**. Calculated as:
+**Weighted_MeanRadius_perImage [µm]** : **'MeanRadius'** per each image according to **'CurvedLength'**. Calculated as:
 ```math
-dataset['Weighted\_MeanRadius\_perImage [um]'] = \frac{\sum_{i} MeanRadius_i \cdot CurvedLength_i}{curvedlength\_sum \cdot 1000}
+dataset['Weighted\_MeanRadius\_perImage [µm]'] = \frac{\sum_{i} MeanRadius_i \cdot CurvedLength_i}{curvedlength\_sum \cdot 1000}
 ```
 
 **Weighted_MeanTortuosity_perImage** : **'MeanTortuosity'** per each image according to **'CurvedLength'**. Calculated as:       
@@ -218,23 +218,23 @@ dataset['Weighted\_MeanRadius\_perImage [um]'] = \frac{\sum_{i} MeanRadius_i \cd
 dataset['Weighted\_MeanTortuosity\_perImage'] = \frac{\sum_{i} Tortuosity_i \cdot CurvedLength_i}{curvedlength\_sum}
 ```
 
-**Weighted_Segment_MeanRadius_perSegment [um]** : Weighted by **'CurvedLength'** value of **'MeanRadius'** calculated for each segment. Calculated as:
+**Weighted_Segment_MeanRadius_perSegment [µm]** : Weighted by **'CurvedLength'** value of **'MeanRadius'** calculated for each segment. Calculated as:
 ```math
-dataset['Weighted\_Segment\_MeanRadius\_perSegment [um]'] = \frac{MeanRadius_i \cdot CurvedLength_i}{curvedlength\_sum \cdot 1000} 
+dataset['Weighted\_Segment\_MeanRadius\_perSegment [µm]'] = \frac{MeanRadius_i \cdot CurvedLength_i}{curvedlength\_sum \cdot 1000} 
 ```
 
-**Weighted_Segment_Volume_perSegment [um^3]** : Weighted by **'CurvedLength'** value of **'Volume'** calculated for each segment.  Calculated as:  
+**Weighted_Segment_Volume_perSegment [um<sup>3</sup>]** : Weighted by **'CurvedLength'** value of **'Volume'** calculated for each segment.  Calculated as:  
 ```math
-dataset['Weighted\_Segment\_Volume\_perSegment [um^3]'] = \frac{Volume_i \cdot CurvedLength_i}{curvedlength\_sum}
+dataset['Weighted\_Segment\_Volume\_perSegment [µm^3]'] = \frac{Volume_i \cdot CurvedLength_i}{curvedlength\_sum}
 ```
 
 ### Frame for export features
 
-**Total Image Volume [nm^3]** : The volume of all voxels per image calculated according to the total image dimensions  [nm^3].  
+**Total Image Volume [nm<sup>3</sup>]** : The volume of all voxels per image calculated according to the total image dimensions  [nm<sup>3</sup>].  
 
-**ROI Volume [nm^3]** :  The volume of all voxels per selected ROI calculated according to the total ROI dimensions  [nm^3].
+**ROI Volume [nm<sup>3</sup>]** :  The volume of all voxels per selected ROI calculated according to the total ROI dimensions  [nm<sup>3</sup>].
 
-**Vessels in ROI Volume (Labeled Volume after pruning before denoizing) [nm^3]** : The volume of all the vessel segments per manually selected ROI  [nm^3]. The value extracted from Binary mask before skeletonization.
+**Vessels in ROI Volume (Labeled Volume after pruning before denoizing) [nm<sup>3</sup>]** : The volume of all the vessel segments per manually selected ROI  [nm<sup>3</sup>]. The value extracted from Binary mask before skeletonization.
 
 **Ratio of ROI Mask to whole image** : The ratio of ROI mask volume to the whole image volume.   
 
