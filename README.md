@@ -147,7 +147,7 @@ However, if you reduce the ZeroVal, it will not result in merging of small fragm
 >    9.3. Define the 'selector' and select the column name to apply a threshold to remove the noise from the data.  
 >    9.4. Define 'threshold' variable for better results
 
-In this step we have to select an appropriate threshold according to the smallest value of **'Curvedlength'** in the output .xml.  
+In this step we have to select an appropriate threshold according to the smallest value of **'Curvedlength'** in the output .XML.
 This step is to avoid noise like two- or three-voxel meaningless branches.
 
 >10. Creation of datasets with a defined order
