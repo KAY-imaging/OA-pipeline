@@ -97,15 +97,12 @@ If the image is too bright, the settings can be adjusted respectively
 **'threshold_multiplier' [4]**  Threshold shift multiplier allows to avoid noise and mess. It removes ranges from ranges frame that are visualized by **'threshold_multiplier'**.  
 Both ranges recalculated as: 
 ```math
-
 Result = (([1] \, \text{or} \, [2]) \times ranges\_from\_autothreshold \times [3]) \times [4]
-
 ```
 
 
 For each image we apply a **Hessian filter** to enhance the image structure.  
-
-We apply the Hessian filte to a 3D image, it is used to detect and highlight textural features and structures in volumetric data. In our case it is used to enhance the tubular and elongated structures of the blood vessels. It is based on the computation of the Hessian, which is a matrix of second partial derivatives of image intensity. In a 3D image, Hessian matrix is calculated from each point representing a volumetric voxel (similar to a pixel in 2D) of the input image. The Hessian filter can help identify volumetric textural features (such as rod-like vessels structure), reflecting the changes of the intensity in different directions around a specific point.
+The Hessian filter that we applying to a 3D image is used to detect and highlight textural features and structures in volumetric data. In our case it is used to enhance the tubular and elongated structures of the blood vessels. It is based on the computation of the Hessian, which is a matrix of second partial derivatives of image intensity. In a 3D image, Hessian matrix is calculated from each point representing a volumetric voxel (similar to a pixel in 2D) of the input image. The Hessian filter can help identify volumetric textural features (such as rod-like vessels structure), reflecting the changes of the intensity in different directions around a specific point.
 [Dirk-Jan Kroon (2023). Hessian based Frangi Vesselness filter (https://www.mathworks.com/matlabcentral/fileexchange/24409-hessian-based-frangi-vesselness-filter) ]. 
 
 To vary Hessian filter settings you need to specify **'hessian_filter'** parameters according to comments in the python notebook for the series of NIfTI images you would like to process.
