@@ -73,7 +73,7 @@ It allows you either to define different thresholds for every single image or de
 
 If **number_of_images_for_threshold** = 0, the threshold will be calculated for each image
 
-### Method for calculating threshold in Amira / Avizo software for correct display and correct validation:
+### Method for calculating threshold in Amira / Avizo software for correct display and validation:
 
 
 To avoid the common error of Avizo auto-threshold setting, we preform the shift of the frame to the histogram values that will allow for proper visualization.
