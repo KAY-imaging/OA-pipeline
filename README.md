@@ -98,7 +98,7 @@ If the image is too bright, the settings can be adjusted respectively
 Both ranges recalculated as: 
 ```math
 
-Result = ((**1** \, \text{or} \, **2**) \times ranges\_from\_autothreshold \times **3**) \times **4**
+Result = ((1 \, \text{or} \, 2) \times ranges\_from\_autothreshold \times 3) \times 4
 
 ```
 
