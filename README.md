@@ -172,10 +172,10 @@ This step is to avoid noise like two- or three-voxel meaningless branches.
 Statistics are previously collected using **Spatial Graph Statistics** on the **Centrline tree** calculations results.
 In this step we build box plots and violin plots allowing you to collect statistics for your data in semi-automatic mode, using statistical criteria of your choice by specyfying **test** parameter in stat annotations.
 ```
-#test_results = add_stat_annotation(axes, data = one_big_merged_frame, x ='Condition',
-#                                   y = col_name, box_pairs = box_pairs,
-#                                   test ='Kruskal', text_format ='star',
-#                                   loc = 'inside', verbose=2)
+test_results = add_stat_annotation(axes, data = one_big_merged_frame, x ='Condition',
+                                   y = col_name, box_pairs = box_pairs,
+                                   test ='Kruskal', text_format ='star',     # test = 't-test_ind', 't-test_welch', 't-test_paired', 'Mann-Whitney', 'Mann-Whitney-gt', 'Mann-Whitney-ls', 'Levene', 'Wilcoxon', 'Kruskal'
+                                   loc = 'inside', verbose=2)
 ```
 
 ---
