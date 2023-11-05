@@ -79,23 +79,23 @@ If **number_of_images_for_threshold** = 0, the threshold will be calculated for 
 To avoid the common error of Avizo auto-threshold setting, we preform the shift of the frame to the histogram values that will allow for proper visualization.
 
 **'first_point_shift' [1]** defines the percentage by which the left autorange limit is moved.  
-Left range limit recalculated as:  
+Left range limit recalculated as :  
 ```math
 Left\_lim\_shift = default\_autorange - default\_autorange \times first\_point\_shift  
 ```
 
 **'second_point_shift' [2]** defines the percentage by which the right autorange limit is moved.  
-Right range limit recalculated as:  
+Right range limit recalculated as :  
 ```math
 Right\_lim\_shift = default\_autorange - default\_autorange \times second\_point\_shift  
 ```
 
 **'multiplier_for_frameshift_of_volren' [3]** it is a multiplier that performs the range frameshift for the 'Volume Rendering' filter  
-If the image is too bright, the settings can be adjusted respectively
+If the image is too bright, the settings can be adjusted respectively.
 
 
 **'threshold_multiplier' [4]**  Threshold shift multiplier allows to avoid noise and mess. It removes ranges from ranges frame that are visualized by **'threshold_multiplier'**.  
-Both ranges recalculated as: 
+Both ranges recalculated as : 
 ```math
 Result = (([1] \, \text{or} \, [2]) \times ranges\_from\_autothreshold \times [3]) \times [4]
 ```
@@ -132,8 +132,7 @@ A certain number of pruning iterations **'pruning.ports.numberOfIterations.texts
 
 **Centerline tree reconstruction.** This tool is used for extracting and visualizing the central axes of the blood vessels.  
 **'centrline_tree.ports.tubesParams.texts[0].value'** Centrline tree Slope is a penalty parameter that is responsible for creating a loop-like branch.  
-**'centrline_tree.ports.tubesParams.texts[1].value'** Centrline tree ZeroVal is a penalty that is responsible for creating a straight branch.  
-However, if you reduce the ZeroVal, it will not result in merging of small fragments into a bigger one but, on the contrary, some of the small segments will be ignored to escape the penalty increase.  
+**'centrline_tree.ports.tubesParams.texts[1].value'** Centrline tree ZeroVal is a penalty that is responsible for creating a straight branch. However, if you reduce the ZeroVal, it will not result in merging of small fragments into a bigger one but, on the contrary, some of the small segments will be ignored to escape the penalty increase.  
 
 >    8.4. Press 'Autosave' in Avizo to save project     
 >    8.5. Save .XML files to the folder with images     
@@ -157,7 +156,7 @@ This step is to avoid noise like two- or three-voxel meaningless branches.
 >    10.2. Merging allows to create dataframes that are specifically suited for your sampling conditions  
 >    10.3. One of the outputs is a merged DataFrame that contains a column named 'conditions' with the filenames of all the images that were analyzed  
 >    10.4. The other one is 'mean' dataset according to the 'merging order' and mode  
->    10.5. This dataset we save in .xlsx format, that are easy to analyse  
+>    10.5. This dataset we save in .XLSX format, that are easy to analyse  
 
 ### Dataset features:
 
