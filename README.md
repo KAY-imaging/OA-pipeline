@@ -269,7 +269,7 @@ Weighted\_Segment\_Volume\_perSegment = \frac{Volume_i \cdot CurvedLength_i}{\su
 
 ### Statistical analysis
 
-In the final steps the workflow performs a statistical analysis using the statannot (v. 0.2.3) python library upgraded with a two-sample KS test allowing for the comparison of two samples; also, it allows to determine whether both come from the same distribution (the null hypothesis).
+In the final steps the workflow performs a statistical analysis using the **statannot**iolin plots or boxplots for data representation (v. 0.2.3) python library upgraded with a two-sample KS test allowing for the comparison of two samples; also, it allows to determine whether both come from the same distribution (the null hypothesis).
 
 The two-sample KS test checks for any kind of violations of the null hypothesis - different variances, medians or distributions. However, this test is unable to report any confidence intervals. If the obtained P-value is smaller than the significance level, we conclude that the two compared samples came from the different populations. This test is used for "per segment" features.
 
