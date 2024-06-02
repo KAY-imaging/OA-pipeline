@@ -267,6 +267,16 @@ Weighted\_Segment\_Volume\_perSegment = \frac{Volume_i \cdot CurvedLength_i}{\su
 
 **Ratio of Vessel Mask to background ROI** : The ratio of Vessel mask volume to the background ROI volume.     
 
+### Statistical analysis
+
+In the final steps the workflow performs a statistical analysis using the statannot (v. 0.2.3) python library upgraded with a two-sample KS test allowing for the comparison of two samples; also, it allows to determine whether both come from the same distribution (the null hypothesis).
+
+The two-sample KS test checks for any kind of violations of the null hypothesis - different variances, medians or distributions. However, this test is unable to report any confidence intervals. If the obtained P-value is smaller than the significance level, we conclude that the two compared samples came from the different populations. This test is used for "per segment" features.
+
+The Kruskal-Wallis test is used to find if at least one group differs from the other groups. The null hypothesis states that all the samples are the same. This test is well suitable for small samples (less than 30) that are not-normally distributed and can be applied to "per image" features.
+
+By defining the parameter **sns.violinplot** or **sns.boxplot** the user can choose violin plots or boxplots for data representation. It depends on the specific user’s task as they highlight different aspects of the data. Boxplots are best used for a simple representation of the data distribution. Violin plots provide a combination of boxplots and kernel density plots adding the frequency of data points at different values. This allows to visualize the distribution density including valleys and peaks and is especially useful for non-Gaussian distributions.
+
 ---
 
 
