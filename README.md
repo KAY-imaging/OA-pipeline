@@ -8,7 +8,7 @@ meaningful information. It utilizes features provided by the Amira / Avizo softw
 Here we want to describe how our pipeline could be implemented to characterize 3D images of vascularisation.
 ---
 ***Image preprocessing***
->1. NIfTI dimentions converter  
+>1. NIfTI dimentions converter  (**MATLAB required**)
 >  1.1. Uploads file from 'folder_path'  
 >  1.2. Returns converted files to 'out_path' folder
 
@@ -304,4 +304,5 @@ Xmltodict 	 (>= 0.13.0)
 #!pip install XlsxWriter==3.1.3
 #!pip install Xmltodict==0.13.0
 ```
+For the dimensions converter - MATLAB required.
 
