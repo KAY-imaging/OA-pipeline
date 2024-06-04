@@ -282,27 +282,28 @@ By defining the parameter **sns.violinplot** or **sns.boxplot** the user can cho
 
 Package                  Version
 ---------------------------------
+numpy 		   (=1.23.4)  
+pandas  	   (= 1.5.2)  
+re           (= 2.2.1)  
+scipy 		   (= 1.10.0)  
+openpyxl 	   (= 3.1.2)  
 et-xmlfile 	 (= 1.1.0)  
 matplotlib 	 (= 3.6.2)  
-numpy 		   (=1.23.4)  
-openpyxl 	   (= 3.1.2)  
-pandas  	   (= 1.5.2)  
-scipy 		   (= 1.10.0)  
 seaborn	     (= 0.12.1)  
 Statannot 	 (= 0.2.3)  
-XlsxWriter 	 (= 3.1.3)  
-Xmltodict 	 (= 0.13.0)  
 ```
+
+
+#!pip install numpy==1.23.4
+#!pip install pandas==1.5.2
+#!pip install re==2.2.1  
+#!pip install scipy==1.10.0
+#!pip install openpyxl==3.1.2
 #!pip install et-xmlfile==1.1.0
 #!pip install matplotlib==3.6.2
-#!pip install numpy==1.23.4
-#!pip install openpyxl==3.1.2
-#!pip install pandas==1.5.2
-#!pip install scipy==1.10.0
 #!pip install seaborn==0.12.1
 #!pip install Statannot==0.2.3
-#!pip install XlsxWriter==3.1.3
-#!pip install Xmltodict==0.13.0
+
 ```
 For the dimensions converter - MATLAB required.
 
