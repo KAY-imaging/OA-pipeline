@@ -186,11 +186,11 @@ test_results = add_stat_annotation(axes, data = one_big_merged_frame, x ='Condit
 
 ### Both datasets features:
 
-**CurvedLength** : Curved lenth [nm] of the skeletonized vessel segment.  
+**CurvedLength** : Curved lenth [µm] of the skeletonized vessel segment.  
 
-**MeanRadius** : Mean radius [nm] of the skeletonized vessel segment.  
+**MeanRadius** : Mean radius [µm] of the skeletonized vessel segment.  
 
-**Volume** : Volume [nm<sup>3</sup>]  of the skeletonized vessel segment.  
+**Volume** : Volume [µm<sup>3</sup>]  of the skeletonized vessel segment.  
 
 **OrientationTheta** : Topological parameter of the segment orientation relative to the coordinate axis.
 The angle between a horizontal plane and a plane perpendicular to the object's principal axis.
@@ -255,11 +255,11 @@ Weighted\_Segment\_Volume\_perSegment = \frac{Volume_i \cdot CurvedLength_i}{\su
 
 ### Features only from the frame_for_export
 
-**Total Image Volume [nm<sup>3</sup>]** : The volume of all voxels per image calculated according to the total image dimensions  [nm<sup>3</sup>].  
+**Total Image Volume [µm<sup>3</sup>]** : The volume of all voxels per image calculated according to the total image dimensions  [µm<sup>3</sup>].  
 
-**ROI Volume [nm<sup>3</sup>]** :  The volume of all voxels per selected ROI calculated according to the total ROI dimensions  [nm<sup>3</sup>].
+**ROI Volume [µm<sup>3</sup>]** :  The volume of all voxels per selected ROI calculated according to the total ROI dimensions  [µm<sup>3</sup>].
 
-**Vessels in ROI Volume (Labeled Volume after pruning before denoizing) [nm<sup>3</sup>]** : The volume of all the vessel segments per manually selected ROI  [nm<sup>3</sup>]. The value extracted from Binary mask before skeletonization.
+**Vessels in ROI Volume (Labeled Volume after pruning before denoizing) [µm<sup>3</sup>]** : The volume of all the vessel segments per manually selected ROI  [µm<sup>3</sup>]. The value extracted from Binary mask before skeletonization.
 
 **Ratio of ROI Mask to whole image** : The ratio of ROI mask volume to the whole image volume.   
 
