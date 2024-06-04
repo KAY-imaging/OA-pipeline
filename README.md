@@ -220,7 +220,7 @@ Volume\_Sum\_perImage = \sum_{i} Volume_i
 
 **Geometrical_Volume_perImage [µm<sup>3</sup>]** : The sum of all the segment volumes in the image [µm<sup>3</sup>], based on the assumption that each vessel segment is a cylinder. Calculated as the geometrical volume of all the cylindrical segments using the **'CurvedLength'** and **'MeanRadius'**. Provided to avoid segmentation and imaging error.
 ```math
-Geometrical\_Volume\_perImage = \frac{\sum_{i} (MeanRadius_i)^2 \cdot \pi \cdot CurvedLength_i}{10^9} 
+Geometrical\_Volume\_perImage = \sum_{i} (MeanRadius_i)^2 \cdot \pi \cdot CurvedLength_i  
 ```
 
 **Imaging_Error_perImage** : The ratio of the **'Geometrical_Volume_perImage'** to the **'Volume_Sum_perImage'**. Calculated as:
