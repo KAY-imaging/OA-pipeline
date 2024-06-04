@@ -230,12 +230,12 @@ Imaging\_Error\_perImage = 1 - \frac{Geometrical\_Volume\_perImage}{Volume\_Sum\
 
 **Vessels_CurvedLength_Sum_perImage [µm]** : Sum of all **'CurvedLength'** per image [µm]. Calculated as:
 ```math
-Vessels\_CurvedLength\_Sum\_perImage = \frac{\sum_{i} CurvedLength_i}{1000}
+Vessels\_CurvedLength\_Sum\_perImage = \sum_{i} CurvedLength_i
 ```
 
 **Weighted_MeanRadius_perImage [µm]** : **'MeanRadius'** per each image according to **'CurvedLength'**. Calculated as:
 ```math
-Weighted\_MeanRadius\_perImage = \frac{\sum_{i} MeanRadius_i \cdot CurvedLength_i}{\sum_{i} CurvedLength_i \cdot 1000}
+Weighted\_MeanRadius\_perImage = \frac{\sum_{i} MeanRadius_i \cdot CurvedLength_i}{\sum_{i} CurvedLength_i}
 ```
 
 **Weighted_MeanTortuosity_perImage** : **'MeanTortuosity'** per each image according to **'CurvedLength'**. Calculated as:       
