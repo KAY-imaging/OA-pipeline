@@ -1,11 +1,11 @@
 
 # OA-workflow
-The provided Python script is a pipeline for processing and analyzing images of vascularization using the Thermo Fisher Scientific Amira / Avizo 3D Visualization & Analysis Software (2022.2). It applies a series of filters and processing techniques to enhance medical image data and extract
+The provided Python script is a workflow for processing and analyzing images of vascularization using the Thermo Fisher Scientific Amira / Avizo 3D Visualization & Analysis Software (2022.2). It applies a series of filters and processing techniques to enhance medical image data and extract
 meaningful information. It utilizes features provided by the Amira / Avizo software to perform these operations and save the results for further analysis.
 
 ![Summary.svg](Summary.svg)
 
-Here we want to describe how our pipeline could be implemented to characterize 3D images of vascularisation.
+Here we want to describe how our workflow could be implemented to characterize 3D images of vascularisation.
 ---
 ***Image preprocessing***
 >1. NIfTI dimentions converter  (**MATLAB required**)
@@ -43,7 +43,7 @@ You can manually select the desired ROI, which will be cut from the image, and c
 >6. Saving  
   6.1. Paste the following code into Avizo console
 
-The first part of this pipeline is then complete with clearing of the project view window in Avizo and prepare it for the next step:
+The first part of this workflow is then complete with clearing of the project view window in Avizo and prepare it for the next step:
 
 >7. Clear 'Project view' in Avizo  
   7.1. Clear and restart the Python console  
@@ -66,7 +66,7 @@ By default the extension is set to .nii but it can be changed to your desired fi
 >    Filter settings can be adjusted with respect to your image properties    
 >    See the settings below    
 
-The filters we provide for our pipeline can be modified with the following settings:             
+The filters we provide for our workflow can be modified with the following settings:             
 
 **'number_of_images_for_threshold'** is a function that sets a number of images in the series for threshold calculation.
 It allows you either to define different thresholds for every single image or define the threshold for one image by specifying the **thr** tag in image name and then apply it to all the other images in the series.   
