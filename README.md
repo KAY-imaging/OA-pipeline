@@ -215,7 +215,7 @@ Tortuosity = \frac{CurvedLength}{ChordLength}
 
 **Volume_Sum_perImage [µm<sup>3</sup>]** : The sum of volume for all the segments in the image [µm<sup>3</sup>]. Calculated as:
 ```math
-Volume\_Sum\_perImage = \frac{volume\_sum}{10^9} 
+Volume\_Sum\_perImage = \sum_{i} (Volume_i) 
 ```
 
 **Geometrical_Volume_perImage [µm<sup>3</sup>]** : The sum of all the segment volumes in the image [µm<sup>3</sup>], based on the assumption that each vessel segment is a cylinder. Calculated as the geometrical volume of all the cylindrical segments using the **'CurvedLength'** and **'MeanRadius'**. Provided to avoid segmentation and imaging error.
